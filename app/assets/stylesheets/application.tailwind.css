@@ -1,5 +1,1202 @@
 @import "tailwindcss";
 
-@source "../../views/**/*";
-@source "../../helpers/**/*.rb";
-@source "../../javascript/**/*";
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-100 text-slate-800 antialiased;
+}
+
+/* ==========================================================
+   DASHBOARD LAYOUT
+========================================================== */
+
+.dashboard-layout {
+  @apply flex h-screen overflow-hidden;
+}
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.sidebar {
+  @apply w-72 bg-slate-950 text-white flex flex-col shadow-2xl;
+}
+
+.sidebar-header {
+  @apply p-6 border-b border-slate-800;
+}
+
+.sidebar-logo {
+  @apply h-12 w-12 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600
+         flex items-center justify-center text-xl font-bold;
+}
+
+.sidebar-title {
+  @apply text-xl font-bold;
+}
+
+.sidebar-subtitle {
+  @apply text-xs text-slate-400;
+}
+
+.sidebar-nav {
+  @apply flex-1 p-4 space-y-2;
+}
+
+.sidebar-link {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl
+         text-slate-300 hover:bg-slate-800
+         hover:text-white transition duration-300;
+}
+
+.sidebar-link-active {
+  @apply bg-blue-600 text-white shadow-lg;
+}
+
+.sidebar-footer {
+  @apply border-t border-slate-800 p-5;
+}
+
+/* ==========================================================
+   TOP NAVBAR
+========================================================== */
+
+.top-navbar {
+  @apply backdrop-blur-lg bg-white/80
+         border-b border-slate-200
+         sticky top-0 z-50;
+}
+
+.top-navbar-content {
+  @apply flex justify-between items-center px-8 py-4;
+}
+
+.user-avatar {
+  @apply h-10 w-10 rounded-full
+         bg-gradient-to-r from-blue-500 to-purple-600
+         text-white flex items-center justify-center
+         font-bold;
+}
+
+.logout-btn {
+  @apply bg-red-500 hover:bg-red-600
+         text-white px-4 py-2 rounded-xl
+         shadow transition;
+}
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.page-container {
+  @apply p-8;
+}
+
+.page-title {
+  @apply text-4xl font-bold text-slate-800;
+}
+
+.page-subtitle {
+  @apply text-slate-500 mt-2;
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.primary-btn {
+  @apply bg-blue-600 hover:bg-blue-700
+         text-white px-5 py-3
+         rounded-xl shadow-lg transition;
+}
+
+.secondary-btn {
+  @apply bg-slate-200 hover:bg-slate-300
+         text-slate-700 px-5 py-3
+         rounded-xl transition;
+}
+
+.success-btn {
+  @apply bg-emerald-600 hover:bg-emerald-700
+         text-white px-5 py-3
+         rounded-xl transition;
+}
+
+.danger-btn {
+  @apply bg-red-600 hover:bg-red-700
+         text-white px-5 py-3
+         rounded-xl transition;
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.card {
+  @apply bg-white rounded-3xl shadow-lg p-6;
+}
+
+.card-header {
+  @apply flex justify-between items-center mb-6;
+}
+
+.card-title {
+  @apply text-xl font-semibold text-slate-800;
+}
+
+/* =========================================
+   PROFESSIONAL DASHBOARD LAYOUT
+========================================= */
+
+.dashboard-body {
+  @apply bg-slate-100;
+}
+
+.dashboard-layout {
+  @apply flex h-screen overflow-hidden;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+  @apply w-72 flex flex-col;
+  background: linear-gradient(
+    180deg,
+    #020617 0%,
+    #0f172a 100%
+  );
+}
+
+.sidebar-header {
+  @apply p-6 border-b border-slate-800;
+}
+
+.sidebar-brand {
+  @apply flex items-center gap-4;
+}
+
+.sidebar-logo {
+  @apply h-14 w-14 rounded-2xl
+         text-white font-bold text-xl
+         flex items-center justify-center;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #9333ea
+  );
+}
+
+.sidebar-title {
+  @apply text-xl font-bold text-white;
+}
+
+.sidebar-subtitle {
+  @apply text-sm text-slate-400;
+}
+
+.sidebar-nav {
+  @apply flex-1 p-4 space-y-2;
+}
+
+.sidebar-link {
+  @apply flex items-center gap-4
+         px-4 py-3 rounded-xl
+         text-slate-300 font-medium
+         transition-all duration-300;
+}
+
+.sidebar-link:hover {
+  @apply bg-slate-800 text-white;
+}
+
+.sidebar-link-active {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  @apply text-white shadow-lg;
+}
+
+.sidebar-footer {
+  @apply p-5 border-t border-slate-800;
+}
+
+.user-mini-card {
+  @apply flex items-center gap-3;
+}
+
+.user-mini-avatar {
+  @apply h-10 w-10 rounded-full
+         bg-gradient-to-r
+         from-blue-500
+         to-purple-600
+         text-white font-bold
+         flex items-center justify-center;
+}
+
+.user-mini-name {
+  @apply text-sm font-semibold text-white;
+}
+
+.user-mini-email {
+  @apply text-xs text-slate-400;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+  @apply flex-1 overflow-y-auto;
+}
+
+.top-navbar {
+  @apply bg-white border-b border-slate-200
+         sticky top-0 z-50
+         px-8 py-5
+         flex justify-between items-center;
+}
+
+.page-heading {
+  @apply text-3xl font-bold text-slate-800;
+}
+
+.page-description {
+  @apply text-slate-500 text-sm mt-1;
+}
+
+.navbar-right {
+  @apply flex items-center gap-5;
+}
+
+.user-profile {
+  @apply flex items-center gap-4;
+}
+
+.user-name {
+  @apply text-sm font-semibold text-slate-800;
+}
+
+.user-role {
+  @apply text-xs text-slate-500;
+}
+
+.user-avatar {
+  @apply h-12 w-12 rounded-full
+         text-white font-bold
+         flex items-center justify-center;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #9333ea
+  );
+}
+
+.logout-btn {
+  @apply px-5 py-2.5 rounded-xl
+         text-white font-medium
+         border-0;
+
+  background: linear-gradient(
+    135deg,
+    #ef4444,
+    #dc2626
+  );
+}
+
+.page-content {
+  @apply p-8;
+}
+
+/* ==========================================================
+   ORGANIZATIONS PAGE
+========================================================== */
+
+.organizations-page {
+  @apply p-8;
+}
+
+.organizations-header {
+  @apply flex justify-between items-center mb-8;
+}
+
+.organizations-title {
+  @apply text-4xl font-bold text-slate-800;
+}
+
+.organizations-subtitle {
+  @apply text-slate-500 mt-2;
+}
+
+.new-organization-btn {
+  @apply bg-blue-600 hover:bg-blue-700
+         text-white px-6 py-3
+         rounded-xl shadow-lg
+         font-medium transition;
+}
+
+/* ==========================================================
+   ORGANIZATION STATS
+========================================================== */
+
+.organization-stats {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 mb-10;
+}
+
+.stat-card {
+  @apply bg-white rounded-3xl
+         shadow-lg p-6
+         flex items-center gap-5;
+}
+
+.stat-icon {
+  @apply h-16 w-16 rounded-2xl
+         flex items-center justify-center
+         text-3xl text-white;
+}
+
+.stat-icon.blue {
+  @apply bg-gradient-to-r from-blue-500 to-blue-700;
+}
+
+.stat-icon.green {
+  @apply bg-gradient-to-r from-emerald-500 to-emerald-700;
+}
+
+.stat-icon.purple {
+  @apply bg-gradient-to-r from-purple-500 to-purple-700;
+}
+
+.stat-label {
+  @apply text-slate-500 text-sm;
+}
+
+.stat-value {
+  @apply text-3xl font-bold text-slate-800;
+}
+
+/* ==========================================================
+   ORGANIZATION GRID
+========================================================== */
+
+.organization-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6;
+}
+
+.organization-card {
+  @apply bg-white rounded-3xl
+         shadow-lg p-6
+         hover:shadow-2xl
+         transition duration-300;
+}
+
+.organization-card-header {
+  @apply flex items-center gap-4 mb-6;
+}
+
+.organization-avatar {
+  @apply h-14 w-14 rounded-2xl
+         bg-gradient-to-r
+         from-blue-500 to-purple-600
+         text-white font-bold text-xl
+         flex items-center justify-center;
+}
+
+.organization-name {
+  @apply text-xl font-semibold text-slate-800;
+}
+
+.organization-slug {
+  @apply text-slate-500 text-sm;
+}
+
+.organization-meta {
+  @apply text-sm text-slate-500
+         border-t border-slate-100
+         pt-4 mb-6;
+}
+
+.organization-actions {
+  @apply flex gap-3;
+}
+
+.btn-view {
+  @apply flex-1 text-center
+         bg-blue-50 text-blue-700
+         px-4 py-2 rounded-xl
+         hover:bg-blue-100 transition;
+}
+
+.btn-edit {
+  @apply flex-1 text-center
+         bg-amber-50 text-amber-700
+         px-4 py-2 rounded-xl
+         hover:bg-amber-100 transition;
+}
+
+.btn-delete {
+  @apply flex-1
+         bg-red-50 text-red-700
+         px-4 py-2 rounded-xl
+         hover:bg-red-100 transition;
+}
+
+/* ==========================================================
+   EMPTY STATE
+========================================================== */
+
+.empty-state {
+  @apply bg-white rounded-3xl
+         shadow-lg p-16
+         text-center;
+}
+
+.empty-icon {
+  @apply text-6xl mb-6;
+}
+
+.empty-state h2 {
+  @apply text-3xl font-bold
+         text-slate-800 mb-3;
+}
+
+.empty-state p {
+  @apply text-slate-500 mb-6;
+}
+
+
+/* ==========================================================
+   ORGANIZATION FORM PAGE
+========================================================== */
+
+.organization-form-page {
+  @apply max-w-5xl mx-auto;
+}
+
+.organization-form-header {
+  @apply flex justify-between items-start mb-8;
+}
+
+.organization-form-title {
+  @apply text-4xl font-bold text-slate-800;
+}
+
+.organization-form-subtitle {
+  @apply mt-2 text-slate-500 text-lg;
+}
+
+.back-btn {
+  @apply inline-flex items-center
+         px-5 py-3
+         rounded-xl
+         bg-white
+         text-slate-700
+         shadow-md
+         hover:shadow-lg
+         hover:bg-slate-50
+         transition;
+}
+
+.organization-form-card {
+  @apply bg-white
+         rounded-3xl
+         shadow-xl
+         border border-slate-100
+         p-8;
+}
+
+/* ==========================================================
+   ORGANIZATION FORM
+========================================================== */
+
+.organization-form {
+  @apply space-y-6;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply block text-sm font-semibold text-slate-700;
+}
+
+.form-input {
+  @apply w-full
+         rounded-xl
+         border border-slate-300
+         px-4 py-3
+         bg-white
+         focus:outline-none
+         focus:ring-2
+         focus:ring-blue-500
+         focus:border-blue-500
+         transition;
+}
+
+.form-textarea {
+  @apply w-full
+         rounded-xl
+         border border-slate-300
+         px-4 py-3
+         min-h-32
+         resize-none
+         focus:outline-none
+         focus:ring-2
+         focus:ring-blue-500
+         focus:border-blue-500;
+}
+
+.form-actions {
+  @apply flex items-center gap-4 pt-4;
+}
+
+.submit-btn {
+  @apply bg-blue-600
+         hover:bg-blue-700
+         text-white
+         px-6 py-3
+         rounded-xl
+         font-medium
+         shadow-lg
+         transition;
+}
+
+.cancel-btn {
+  @apply bg-slate-100
+         hover:bg-slate-200
+         text-slate-700
+         px-6 py-3
+         rounded-xl
+         font-medium
+         transition;
+}
+
+.field-error {
+  @apply text-red-600 text-sm mt-1;
+}
+
+.error-box {
+  @apply bg-red-50
+         border border-red-200
+         rounded-2xl
+         p-4
+         mb-6;
+}
+
+.error-title {
+  @apply text-red-700
+         font-semibold
+         mb-2;
+}
+
+/* ==========================================================
+   EDIT ORGANIZATION PAGE
+========================================================== */
+
+.organization-form-page {
+  @apply max-w-6xl mx-auto;
+}
+
+.organization-form-header {
+  @apply flex justify-between items-start mb-8;
+}
+
+.organization-form-title {
+  @apply text-4xl font-bold text-slate-800;
+}
+
+.organization-form-subtitle {
+  @apply text-slate-500 text-lg;
+}
+
+.back-btn {
+  @apply inline-flex items-center
+         px-5 py-3
+         rounded-xl
+         bg-white
+         border border-slate-200
+         text-slate-700
+         font-medium
+         shadow-sm
+         hover:shadow-lg
+         hover:bg-slate-50
+         transition-all duration-300;
+}
+
+.organization-form-card {
+  @apply bg-white
+         rounded-3xl
+         shadow-xl
+         border border-slate-100
+         overflow-hidden;
+}
+
+/* ==========================================================
+   ORGANIZATION PROFILE SECTION
+========================================================== */
+
+.organization-profile {
+  @apply p-8
+         bg-gradient-to-r
+         from-slate-50
+         via-blue-50
+         to-purple-50
+         border-b border-slate-100;
+}
+
+.organization-profile-avatar {
+  @apply h-16 w-16
+         rounded-2xl
+         bg-gradient-to-r
+         from-blue-500
+         to-purple-600
+         text-white
+         flex items-center justify-center
+         text-2xl font-bold
+         shadow-lg;
+}
+
+.organization-profile-name {
+  @apply text-2xl font-bold text-slate-800;
+}
+
+.organization-profile-slug {
+  @apply text-slate-500;
+}
+
+.organization-profile-meta {
+  @apply mt-4
+         flex gap-6
+         text-sm
+         text-slate-500;
+}
+
+/* ==========================================================
+   FORM WRAPPER
+========================================================== */
+
+.organization-form-wrapper {
+  @apply p-8;
+}
+
+.organization-form {
+  @apply space-y-6;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply block
+         text-sm
+         font-semibold
+         text-slate-700;
+}
+
+.form-input {
+  @apply w-full
+         rounded-xl
+         border border-slate-300
+         px-4 py-3
+         bg-white
+         transition
+         focus:outline-none
+         focus:ring-2
+         focus:ring-blue-500
+         focus:border-blue-500;
+}
+
+.form-input:hover {
+  @apply border-slate-400;
+}
+
+.form-actions {
+  @apply flex items-center gap-4 pt-6;
+}
+
+.submit-btn {
+  @apply bg-gradient-to-r
+         from-blue-600
+         to-blue-700
+         hover:from-blue-700
+         hover:to-blue-800
+         text-white
+         px-6 py-3
+         rounded-xl
+         font-semibold
+         shadow-lg
+         transition;
+}
+
+.cancel-btn {
+  @apply bg-slate-100
+         hover:bg-slate-200
+         text-slate-700
+         px-6 py-3
+         rounded-xl
+         font-medium
+         transition;
+}
+
+
+/* ==========================================================
+   ORGANIZATION SHOW PAGE
+========================================================== */
+
+.organization-show-page {
+  @apply max-w-7xl mx-auto space-y-8;
+}
+
+/* Header */
+
+.organization-show-header {
+  @apply bg-white rounded-3xl shadow-xl border border-slate-100
+         p-8 flex justify-between items-center;
+}
+
+.organization-show-avatar {
+  @apply h-20 w-20 rounded-3xl
+         bg-gradient-to-r from-blue-500 to-purple-600
+         text-white text-3xl font-bold
+         flex items-center justify-center
+         shadow-lg;
+}
+
+.organization-show-title {
+  @apply text-4xl font-bold text-slate-800;
+}
+
+.organization-show-slug {
+  @apply text-slate-500 text-lg mt-1;
+}
+
+/* Buttons */
+
+.edit-btn {
+  @apply px-5 py-3 rounded-xl
+         bg-gradient-to-r from-amber-500 to-orange-600
+         text-white font-medium
+         shadow-lg hover:shadow-xl
+         transition duration-300;
+}
+
+.back-btn {
+  @apply px-5 py-3 rounded-xl
+         bg-white border border-slate-200
+         text-slate-700 font-medium
+         hover:bg-slate-50
+         shadow-sm hover:shadow-md
+         transition duration-300;
+}
+
+/* Stats */
+
+.organization-stats-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6;
+}
+
+.organization-stat-card {
+  @apply bg-white rounded-3xl shadow-lg
+         border border-slate-100
+         p-6 flex items-center gap-5;
+}
+
+.stat-icon {
+  @apply h-16 w-16 rounded-2xl
+         text-white text-2xl
+         flex items-center justify-center
+         shadow-lg;
+}
+
+.stat-icon.blue {
+  @apply bg-gradient-to-r from-blue-500 to-blue-700;
+}
+
+.stat-icon.green {
+  @apply bg-gradient-to-r from-emerald-500 to-emerald-700;
+}
+
+.stat-icon.purple {
+  @apply bg-gradient-to-r from-purple-500 to-purple-700;
+}
+
+.stat-label {
+  @apply text-sm text-slate-500;
+}
+
+.stat-value {
+  @apply text-3xl font-bold text-slate-800;
+}
+
+.stat-date {
+  @apply text-lg font-semibold text-slate-700;
+}
+
+/* Details */
+
+.organization-details-card {
+  @apply bg-white rounded-3xl shadow-xl
+         border border-slate-100 p-8;
+}
+
+.section-title {
+  @apply text-2xl font-bold text-slate-800
+         mb-8 pb-4 border-b border-slate-100;
+}
+
+.details-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+}
+
+.detail-label {
+  @apply text-sm uppercase tracking-wide
+         text-slate-400 font-medium mb-2;
+}
+
+.detail-value {
+  @apply text-lg font-semibold text-slate-800;
+}
+
+/* Hover Effects */
+
+.organization-stat-card:hover {
+  @apply shadow-2xl -translate-y-1;
+  transition: all 0.3s ease;
+}
+
+.organization-details-card:hover {
+  @apply shadow-2xl;
+  transition: all 0.3s ease;
+}
+
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.sidebar {
+  @apply w-72
+         bg-slate-950
+         text-white
+         h-screen
+         flex
+         flex-col
+         shadow-2xl;
+}
+
+/* Logo Area */
+
+.sidebar-header {
+  @apply p-6
+         border-b
+         border-slate-800;
+}
+
+.sidebar-logo {
+  @apply text-2xl
+         font-bold
+         text-blue-400;
+}
+
+.sidebar-subtitle {
+  @apply text-sm
+         text-slate-400
+         mt-1;
+}
+
+/* Navigation */
+
+.sidebar-nav {
+  @apply flex-1
+         p-4
+         space-y-2;
+}
+
+.sidebar-link {
+  @apply flex
+         items-center
+         gap-3
+         px-4
+         py-3
+         rounded-xl
+         text-slate-300
+         hover:bg-slate-800
+         hover:text-white
+         transition-all
+         duration-300;
+}
+
+.sidebar-link-active {
+  @apply bg-gradient-to-r
+         from-blue-600
+         to-blue-700
+         text-white
+         shadow-lg;
+}
+
+/* Footer */
+
+.sidebar-footer {
+  @apply p-5
+         border-t
+         border-slate-800;
+}
+
+.sidebar-user-email {
+  @apply text-sm
+         text-slate-300
+         truncate;
+}
+
+.sidebar-user-role {
+  @apply text-xs
+         text-slate-500;
+}
+
+/* ==========================================================
+   EDIT PAGE HEADER ICON
+========================================================== */
+
+.edit-page-icon {
+  @apply h-12 w-12
+         rounded-2xl
+         bg-gradient-to-r
+         from-amber-500
+         to-orange-600
+         text-white
+         flex items-center
+         justify-center
+         text-lg
+         font-bold
+         shadow-lg;
+}
+
+
+/* ==========================================================
+   LOGIN PAGE
+========================================================== */
+
+.login-container {
+  @apply min-h-screen flex;
+}
+
+.login-left {
+  @apply hidden lg:flex w-3/5 items-center relative overflow-hidden;
+  background:
+    radial-gradient(circle at top left,
+      rgba(59,130,246,.30),
+      transparent 40%),
+    radial-gradient(circle at bottom right,
+      rgba(168,85,247,.25),
+      transparent 40%),
+    linear-gradient(
+      135deg,
+      #020617 0%,
+      #0f172a 40%,
+      #1e3a8a 100%
+    );
+}
+
+.login-right {
+  @apply w-full lg:w-2/5
+         flex items-center justify-center
+         px-10;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fafc,
+      #eff6ff
+    );
+}
+
+.login-content {
+  @apply relative z-10 max-w-2xl px-16;
+}
+
+.login-badge {
+  @apply inline-flex items-center
+         px-5 py-2 rounded-full
+         text-white font-medium
+         mb-8;
+
+  background: rgba(255,255,255,.12);
+}
+
+.hero-title {
+  @apply text-6xl font-black
+         text-white leading-tight;
+}
+
+.hero-title span {
+  @apply block text-blue-400;
+}
+
+.login-subtitle {
+  @apply text-xl text-slate-300
+         mt-6 mb-10;
+}
+
+.feature-grid {
+  @apply grid grid-cols-2 gap-5;
+}
+
+.feature-card {
+  @apply p-5 rounded-2xl
+         text-white font-semibold;
+
+  background: rgba(255,255,255,.08);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  transition: all .3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,.12);
+}
+
+.login-card {
+  @apply w-full max-w-md
+         rounded-[32px]
+         p-10;
+
+  background: rgba(255,255,255,.95);
+
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.12);
+}
+
+.logo-box {
+  @apply h-20 w-20 mx-auto
+         rounded-3xl
+         flex items-center justify-center
+         text-3xl font-black
+         text-white mb-6;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #9333ea
+    );
+}
+
+.welcome-title {
+  @apply text-5xl font-bold
+         text-slate-900;
+}
+
+.welcome-subtitle {
+  @apply text-slate-500 mt-3;
+}
+
+.form-label {
+  @apply block mb-2
+         font-medium text-slate-700;
+}
+
+.form-input {
+  @apply w-full rounded-xl
+         border border-slate-300
+         px-4 py-3
+         bg-white
+         focus:outline-none
+         focus:ring-2
+         focus:ring-blue-500;
+}
+
+.remember-me {
+  @apply flex items-center gap-2
+         text-slate-600 text-sm;
+}
+
+.forgot-link {
+  @apply text-blue-600 hover:text-blue-700;
+}
+
+.login-button {
+  @apply w-full py-4 rounded-xl
+         text-white font-semibold
+         bg-blue-600 hover:bg-blue-700
+         shadow-lg transition;
+}
+
+.signup-section {
+  @apply text-center mt-8 text-slate-500;
+}
+
+.signup-link {
+  @apply text-blue-600 font-semibold;
+}
+
+/* Floating Effects */
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: rgba(59,130,246,.20);
+  top: -100px;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(168,85,247,.15);
+  bottom: 0;
+  right: 100px;
+}
+
+.orb-3 {
+  width: 180px;
+  height: 180px;
+  background: rgba(14,165,233,.15);
+  top: 40%;
+  left: 60%;
+}
+
+/* ==========================================================
+   FLASH MESSAGES
+========================================================== */
+
+.flash-success {
+  @apply bg-green-100 border border-green-300
+         text-green-800 px-4 py-3 rounded-xl;
+}
+
+.flash-error {
+  @apply bg-red-100 border border-red-300
+         text-red-800 px-4 py-3 rounded-xl;
+}
+
+.flash-info {
+  @apply bg-blue-100 border border-blue-300
+         text-blue-800 px-4 py-3 rounded-xl;
+}

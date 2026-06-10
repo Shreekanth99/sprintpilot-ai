@@ -1,0 +1,175 @@
+<div class="organizations-page">
+
+  <!-- Page Header -->
+  <div class="organizations-header">
+
+    <div>
+      <h1 class="organizations-title">
+        Organizations
+      </h1>
+
+      <p class="organizations-subtitle">
+        Manage organizations, workspaces and teams.
+      </p>
+    </div>
+
+    <%= link_to new_organization_path,
+        class: "new-organization-btn" do %>
+
+      + New Organization
+
+    <% end %>
+
+  </div>
+
+  <!-- Stats -->
+  <div class="organization-stats">
+
+    <div class="stat-card">
+
+      <div class="stat-icon blue">
+        🏢
+      </div>
+
+      <div>
+
+        <p class="stat-label">
+          Organizations
+        </p>
+
+        <h3 class="stat-value">
+          <%= Organization.count %>
+        </h3>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon green">
+        🚀
+      </div>
+
+      <div>
+
+        <p class="stat-label">
+          Projects
+        </p>
+
+        <h3 class="stat-value">
+          <%= Project.count %>
+        </h3>
+
+      </div>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="stat-icon purple">
+        👥
+      </div>
+
+      <div>
+
+        <p class="stat-label">
+          Teams
+        </p>
+
+        <h3 class="stat-value">
+          <%= Team.count %>
+        </h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Organization Cards -->
+
+  <% if @organizations.any? %>
+
+    <div class="organization-grid">
+
+      <% @organizations.each do |organization| %>
+
+        <div class="organization-card">
+
+          <div class="organization-card-header">
+
+            <div class="organization-avatar">
+              <%= organization.name.first.upcase %>
+            </div>
+
+            <div>
+
+              <h3 class="organization-name">
+                <%= organization.name %>
+              </h3>
+
+              <p class="organization-slug">
+                @<%= organization.slug %>
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="organization-meta">
+
+            Created
+            <%= organization.created_at.strftime("%d %b %Y") %>
+
+          </div>
+
+          <div class="organization-actions">
+
+            <%= link_to "View",
+                organization,
+                class: "btn-view" %>
+
+            <%= link_to "Edit",
+                edit_organization_path(organization),
+                class: "btn-edit" %>
+
+            <%= button_to "Delete",
+                organization,
+                method: :delete,
+                data: { turbo_confirm: "Delete this organization?" },
+                class: "btn-delete" %>
+
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+  <% else %>
+
+    <div class="empty-state">
+
+      <div class="empty-icon">
+        🏢
+      </div>
+
+      <h2>
+        No Organizations Found
+      </h2>
+
+      <p>
+        Create your first organization to start managing projects.
+      </p>
+
+      <%= link_to "Create Organization",
+          new_organization_path,
+          class: "new-organization-btn mt-4 inline-flex" %>
+
+    </div>
+
+  <% end %>
+
+</div>

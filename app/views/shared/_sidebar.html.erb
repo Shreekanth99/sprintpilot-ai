@@ -1,0 +1,43 @@
+<aside class="w-72 bg-slate-950 text-white">
+
+  <div class="p-6 border-b border-slate-800">
+
+    <h1 class="text-2xl font-bold text-blue-400">
+      SprintPilot AI
+    </h1>
+
+    <p class="text-sm text-slate-400">
+      Agile Management Platform
+    </p>
+
+  </div>
+
+  <nav class="p-4 space-y-2">
+
+    <%= link_to dashboard_path,
+        data: { turbo_frame: "_top" },
+        class: sidebar_class(dashboard_path) do %>
+
+      📊 Dashboard
+
+    <% end %>
+
+    <%= link_to organizations_path,
+        data: { turbo_frame: "_top" },
+        class: sidebar_class(organizations_path) do %>
+
+      🏢 Organizations
+
+    <% end %>
+
+    <%= link_to projects_path,
+        data: { turbo_frame: "_top" },
+        class: sidebar_class(projects_path) do %>
+
+      🚀 Projects
+
+    <% end %>
+
+  </nav>
+
+</aside>

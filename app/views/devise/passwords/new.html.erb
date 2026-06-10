@@ -1,16 +1,103 @@
-<h2>Forgot your password?</h2>
+<div class="login-container">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="login-left">
 
-  <div class="field">
-    <p><%= f.label :email %></p>
-    <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
+```
+<div class="login-content">
+
+  <span class="login-badge">
+    🔒 SECURE ACCOUNT RECOVERY
+  </span>
+
+  <h1 class="login-title">
+    Reset Your Password
+  </h1>
+
+  <p class="login-subtitle">
+    Securely recover access to your SprintPilot AI workspace.
+  </p>
+
+  <div class="feature-grid">
+
+    <div class="feature-card">
+      🔐 Secure Authentication
+    </div>
+
+    <div class="feature-card">
+      ⚡ Fast Recovery
+    </div>
+
+    <div class="feature-card">
+      🛡️ Enterprise Security
+    </div>
+
+    <div class="feature-card">
+      ☁️ Cloud Access
+    </div>
+
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me password reset instructions" %>
-  </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+
+  </div>
+
+  <div class="login-right">
+
+
+<div class="login-card">
+
+  <div class="text-center mb-8">
+
+    <div class="logo-box">
+      SP
+    </div>
+
+    <h2 class="welcome-title">
+      Forgot Password?
+    </h2>
+
+    <p class="welcome-subtitle">
+      Enter your email to receive reset instructions.
+    </p>
+
+  </div>
+
+  <%= form_for(resource,
+      as: resource_name,
+      url: password_path(resource_name),
+      html: { method: :post }) do |f| %>
+
+    <div class="space-y-5">
+
+      <div>
+
+        <%= f.label :email,
+            class: "form-label" %>
+
+        <%= f.email_field :email,
+            autofocus: true,
+            class: "form-input" %>
+
+      </div>
+
+      <%= f.submit "Send Reset Instructions",
+          class: "login-button" %>
+
+    </div>
+
+  <% end %>
+
+  <div class="signup-section">
+
+    <%= link_to "← Back to Login",
+        new_user_session_path,
+        class: "signup-link" %>
+
+  </div>
+
+</div>
+
+  </div>
+
+</div>

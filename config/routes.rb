@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "dashboard#index"
+  authenticated :user do
+    root "dashboard#index", as: :authenticated_root
+  end
 
-  get "up" => "rails/health#show", as: :rails_health_check
+  unauthenticated do
+    root "pages#landing"
+  end
+
+  get "dashboard", to: "dashboard#index", as: :dashboard
+
+  resources :organizations
+  resources :projects
 end

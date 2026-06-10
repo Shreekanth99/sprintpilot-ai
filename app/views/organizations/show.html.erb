@@ -1,0 +1,168 @@
+<div class="organization-show-page">
+
+  <div class="organization-show-header">
+
+<div class="flex items-center gap-5">
+
+  <div class="organization-show-avatar">
+    <%= @organization.name.first.upcase %>
+  </div>
+
+  <div>
+
+    <h1 class="organization-show-title">
+      <%= @organization.name %>
+    </h1>
+
+    <p class="organization-show-slug">
+      @<%= @organization.slug %>
+    </p>
+
+  </div>
+
+</div>
+
+<div class="flex gap-3">
+
+  <%= link_to "Edit",
+      edit_organization_path(@organization),
+      class: "edit-btn" %>
+
+  <%= link_to "Back",
+      organizations_path,
+      class: "back-btn" %>
+
+</div>
+
+
+  </div>
+
+  <div class="organization-stats-grid">
+
+
+<div class="organization-stat-card">
+
+  <div class="stat-icon blue">
+    🚀
+  </div>
+
+  <div>
+
+    <p class="stat-label">
+      Projects
+    </p>
+
+    <h3 class="stat-value">
+      <%= @organization.projects.count rescue 0 %>
+    </h3>
+
+  </div>
+
+</div>
+
+<div class="organization-stat-card">
+
+  <div class="stat-icon purple">
+    👥
+  </div>
+
+  <div>
+
+    <p class="stat-label">
+      Teams
+    </p>
+
+    <h3 class="stat-value">
+      <%= @organization.teams.count rescue 0 %>
+    </h3>
+
+  </div>
+
+</div>
+
+<div class="organization-stat-card">
+
+  <div class="stat-icon green">
+    📅
+  </div>
+
+  <div>
+
+    <p class="stat-label">
+      Created
+    </p>
+
+    <h3 class="stat-date">
+      <%= @organization.created_at.strftime("%d %b %Y") %>
+    </h3>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+  <div class="organization-details-card">
+
+
+<h2 class="section-title">
+  Organization Details
+</h2>
+
+<div class="details-grid">
+
+  <div>
+
+    <p class="detail-label">
+      Name
+    </p>
+
+    <p class="detail-value">
+      <%= @organization.name %>
+    </p>
+
+  </div>
+
+  <div>
+
+    <p class="detail-label">
+      Slug
+    </p>
+
+    <p class="detail-value">
+      <%= @organization.slug %>
+    </p>
+
+  </div>
+
+  <div>
+
+    <p class="detail-label">
+      Created At
+    </p>
+
+    <p class="detail-value">
+      <%= @organization.created_at.strftime("%d %B %Y") %>
+    </p>
+
+  </div>
+
+  <div>
+
+    <p class="detail-label">
+      Last Updated
+    </p>
+
+    <p class="detail-value">
+      <%= @organization.updated_at.strftime("%d %B %Y") %>
+    </p>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+</div>

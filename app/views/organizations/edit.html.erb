@@ -1,0 +1,70 @@
+<div class="organization-form-page">
+
+  <div class="organization-form-header">
+
+    <div>
+
+      <div class="flex items-center gap-3 mb-2">
+
+        <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 text-white flex items-center justify-center font-bold text-lg">
+          ✏️
+        </div>
+
+        <div>
+
+          <h1 class="organization-form-title">
+            Edit Organization
+          </h1>
+
+          <p class="organization-form-subtitle">
+            Update organization information and workspace settings.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <%= link_to organizations_path,
+        class: "back-btn" do %>
+
+      ← Back to Organizations
+
+    <% end %>
+
+  </div>
+
+  <div class="organization-form-card">
+
+    <div class="mb-6 pb-6 border-b border-slate-100">
+
+      <div class="flex items-center gap-4">
+
+        <div class="h-14 w-14 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 text-white flex items-center justify-center text-xl font-bold">
+
+          <%= @organization.name.first.upcase %>
+
+        </div>
+
+        <div>
+
+          <h2 class="text-xl font-semibold text-slate-800">
+            <%= @organization.name %>
+          </h2>
+
+          <p class="text-slate-500">
+            @<%= @organization.slug %>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <%= render "form" %>
+
+  </div>
+
+</div>

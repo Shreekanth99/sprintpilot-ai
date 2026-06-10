@@ -1,8 +1,154 @@
-<h1>SprintPilot AI</h1>
+<div class="relative">
 
-<ul>
-  <li>Organizations: <%= Organization.count %></li>
-  <li>Projects: <%= Project.count %></li>
-  <li>Sprints: <%= Sprint.count %></li>
-  <li>Stories: <%= Story.count %></li>
-</ul>
+  <!-- Background Decoration -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div class="absolute top-0 right-0 h-96 w-96 rounded-full bg-blue-100 blur-3xl opacity-40"></div>
+    <div class="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-purple-100 blur-3xl opacity-40"></div>
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="mb-10">
+
+    <div class="flex justify-between items-center">
+
+      <div>
+        <h1 class="text-4xl font-bold text-slate-800">
+          Welcome back, <%= current_user.name.presence || current_user.email %> 👋
+        </h1>
+
+        <p class="text-slate-500 mt-2 text-lg">
+          Here's what's happening across your workspace today.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+    <div class="bg-gradient-to-r from-blue-500 to-blue-700 text-white p-6 rounded-3xl shadow-xl">
+      <p class="text-blue-100">Organizations</p>
+      <h2 class="text-5xl font-bold mt-3">
+        <%= Organization.count %>
+      </h2>
+    </div>
+
+    <div class="bg-gradient-to-r from-emerald-500 to-emerald-700 text-white p-6 rounded-3xl shadow-xl">
+      <p class="text-emerald-100">Projects</p>
+      <h2 class="text-5xl font-bold mt-3">
+        <%= Project.count %>
+      </h2>
+    </div>
+
+    <div class="bg-gradient-to-r from-purple-500 to-purple-700 text-white p-6 rounded-3xl shadow-xl">
+      <p class="text-purple-100">Sprints</p>
+      <h2 class="text-5xl font-bold mt-3">
+        <%= Sprint.count %>
+      </h2>
+    </div>
+
+    <div class="bg-gradient-to-r from-orange-500 to-orange-700 text-white p-6 rounded-3xl shadow-xl">
+      <p class="text-orange-100">Stories</p>
+      <h2 class="text-5xl font-bold mt-3">
+        <%= Story.count %>
+      </h2>
+    </div>
+
+  </div>
+
+  <!-- Main Content -->
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-8 mt-10">
+
+    <!-- Recent Projects -->
+    <div class="xl:col-span-2 bg-white rounded-3xl shadow-lg p-8">
+
+      <div class="flex justify-between items-center mb-6">
+
+        <h2 class="text-2xl font-bold text-slate-800">
+          Recent Projects
+        </h2>
+
+        <%= link_to "View All",
+            projects_path,
+            class: "text-blue-600 hover:text-blue-700 font-medium" %>
+
+      </div>
+
+      <% if Project.any? %>
+
+        <div class="space-y-4">
+
+          <% Project.limit(5).each do |project| %>
+
+            <div class="border border-slate-200 rounded-xl p-4 hover:bg-slate-50 transition">
+
+              <h3 class="font-semibold text-slate-800">
+                <%= project.name %>
+              </h3>
+
+            </div>
+
+          <% end %>
+
+        </div>
+
+      <% else %>
+
+        <div class="text-center py-10">
+
+          <div class="text-6xl mb-3">
+            🚀
+          </div>
+
+          <h3 class="font-semibold text-lg">
+            No Projects Yet
+          </h3>
+
+          <p class="text-slate-500 mt-2">
+            Create your first project to get started.
+          </p>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+    <!-- AI Insights -->
+    <div class="bg-white rounded-3xl shadow-lg p-8">
+
+      <h2 class="text-2xl font-bold mb-6 text-slate-800">
+        🤖 AI Insights
+      </h2>
+
+      <div class="space-y-4">
+
+        <div class="bg-blue-50 border border-blue-100 p-4 rounded-xl">
+          Sprint Risk Analysis
+          <div class="text-sm text-slate-500 mt-1">
+            Coming in Phase 5
+          </div>
+        </div>
+
+        <div class="bg-green-50 border border-green-100 p-4 rounded-xl">
+          AI Story Generator
+          <div class="text-sm text-slate-500 mt-1">
+            Generate stories from requirements
+          </div>
+        </div>
+
+        <div class="bg-purple-50 border border-purple-100 p-4 rounded-xl">
+          Team Productivity
+          <div class="text-sm text-slate-500 mt-1">
+            AI-powered sprint recommendations
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
