@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
+  include Pundit::Authorization
+
   before_action :authenticate_user!
+
+  rescue_from Pundit::NotAuthorizedError do
+    redirect_to dashboard_path,
+                alert: "You are not authorized to perform this action."
+  end
 
   protected
 

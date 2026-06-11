@@ -8,8 +8,10 @@ one:
   email: admin@sprintpilot.ai
   encrypted_password: <%= Devise::Encryptor.digest(User, "Password@123") %>
   name: Admin User
+  role: super_admin
 
 two:
-  email: user@sprintpilot.ai
+  email: developer@sprintpilot.ai
   encrypted_password: <%= Devise::Encryptor.digest(User, "Password@123") %>
-  name: Test User
+  name: Developer User
+  role: developer

@@ -1,0 +1,27 @@
+<div class="organization-form-page">
+
+  <div class="organization-form-header">
+
+    <div>
+
+      <h1 class="organization-form-title">
+        Edit Project
+      </h1>
+
+      <p class="organization-form-subtitle">
+        Update project information.
+      </p>
+
+    </div>
+
+    <%= link_to "← Back",
+        projects_path,
+        class: "back-btn" %>
+
+  </div>
+
+  <div class="organization-form-card">
+    <%= render "form" %>
+  </div>
+
+</div>

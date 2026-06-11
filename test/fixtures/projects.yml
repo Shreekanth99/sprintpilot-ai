@@ -1,11 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  name: MyString
-  description: MyText
+  name: SprintPilot Platform
+  description: Agile management platform
   organization: one
 
 two:
-  name: MyString
-  description: MyText
+  name: Inventory Pro
+  description: Inventory tracking application
   organization: two

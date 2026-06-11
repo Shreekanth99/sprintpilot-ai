@@ -1,0 +1,65 @@
+<div class="organizations-page">
+
+  <div class="organizations-header">
+
+    <div>
+
+      <h1 class="organizations-title">
+        Projects
+      </h1>
+
+      <p class="organizations-subtitle">
+        Manage project workspaces.
+      </p>
+
+    </div>
+
+    <%= link_to "+ New Project",
+        new_project_path,
+        class: "new-organization-btn" %>
+
+  </div>
+
+  <div class="organization-grid">
+
+    <% @projects.each do |project| %>
+
+      <div class="organization-card">
+
+        <h3 class="organization-name">
+          <%= project.name %>
+        </h3>
+
+        <p class="organization-slug">
+          <%= project.organization.name %>
+        </p>
+
+        <p class="mt-4 text-slate-600">
+          <%= truncate(project.description, length: 100) %>
+        </p>
+
+        <div class="organization-actions">
+
+          <%= link_to "View",
+              project,
+              class: "btn-view" %>
+
+          <%= link_to "Edit",
+              edit_project_path(project),
+              class: "btn-edit" %>
+
+          <%= button_to "Delete",
+              project,
+              method: :delete,
+              data: { turbo_confirm: "Delete project?" },
+              class: "btn-delete" %>
+
+        </div>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

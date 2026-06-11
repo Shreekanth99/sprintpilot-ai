@@ -1,0 +1,49 @@
+<%= form_with model: @project, class: "space-y-6" do |form| %>
+
+  <% if @project.errors.any? %>
+    <div class="flash-error">
+      <ul>
+        <% @project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, class: "form-label" %>
+
+    <%= form.text_field :name,
+        class: "form-input" %>
+  </div>
+
+  <div>
+    <%= form.label :description, class: "form-label" %>
+
+    <%= form.text_area :description,
+        rows: 5,
+        class: "form-input" %>
+  </div>
+
+  <div>
+    <%= form.label :organization_id,
+        "Organization",
+        class: "form-label" %>
+
+    <%= form.collection_select :organization_id,
+        Organization.order(:name),
+        :id,
+        :name,
+        {},
+        class: "form-input" %>
+  </div>
+
+  <div class="flex gap-3">
+    <%= form.submit class: "primary-btn" %>
+
+    <%= link_to "Cancel",
+        projects_path,
+        class: "secondary-btn" %>
+  </div>
+
+<% end %>

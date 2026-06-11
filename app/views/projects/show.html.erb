@@ -1,0 +1,79 @@
+<div class="organization-show-page">
+
+  <div class="organization-show-header">
+
+    <div>
+
+      <h1 class="organization-show-title">
+        <%= @project.name %>
+      </h1>
+
+      <p class="organization-show-slug">
+        <%= @project.organization.name %>
+      </p>
+
+    </div>
+
+    <div class="flex gap-3">
+
+      <%= link_to "Edit",
+          edit_project_path(@project),
+          class: "edit-btn" %>
+
+      <%= link_to "Back",
+          projects_path,
+          class: "back-btn" %>
+
+    </div>
+
+  </div>
+
+  <div class="organization-details-card">
+
+    <h2 class="section-title">
+      Project Details
+    </h2>
+
+    <div class="space-y-6">
+
+      <div>
+
+        <p class="detail-label">
+          Name
+        </p>
+
+        <p class="detail-value">
+          <%= @project.name %>
+        </p>
+
+      </div>
+
+      <div>
+
+        <p class="detail-label">
+          Description
+        </p>
+
+        <p class="detail-value">
+          <%= @project.description %>
+        </p>
+
+      </div>
+
+      <div>
+
+        <p class="detail-label">
+          Organization
+        </p>
+
+        <p class="detail-value">
+          <%= @project.organization.name %>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -10,18 +10,25 @@ class OrganizationsController < ApplicationController
   layout "dashboard"
 
   def index
+    authorize Organization
+
     @organizations = Organization.order(created_at: :desc)
   end
 
   def show
+    authorize @organization
   end
 
   def new
     @organization = Organization.new
+
+    authorize @organization
   end
 
   def create
     @organization = Organization.new(organization_params)
+
+    authorize @organization
 
     if @organization.save
       redirect_to organizations_path,
@@ -32,9 +39,12 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
+    authorize @organization
   end
 
   def update
+    authorize @organization
+
     if @organization.update(organization_params)
       redirect_to organizations_path,
                   notice: "Organization updated successfully."
@@ -44,6 +54,8 @@ class OrganizationsController < ApplicationController
   end
 
   def destroy
+    authorize @organization
+
     @organization.destroy
 
     redirect_to organizations_path,
