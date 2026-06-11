@@ -10,7 +10,6 @@ jobs:
 test:
 runs-on: ubuntu-latest
 
-```
 services:
   postgres:
     image: postgres:16
@@ -56,4 +55,3 @@ steps:
       RAILS_ENV: test
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/sprintpilot_test
     run: bin/rails test
-```
