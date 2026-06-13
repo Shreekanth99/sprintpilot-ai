@@ -1122,6 +1122,127 @@ body {
 
 
 /* ==========================================================
+EPICS PAGE
+========================================================== */
+
+.epics-page {
+@apply space-y-8;
+}
+
+.epics-header {
+@apply flex justify-between items-center;
+}
+
+.epics-title {
+@apply text-4xl font-bold text-slate-900;
+}
+
+.epics-subtitle {
+@apply text-slate-500 mt-2;
+}
+
+.new-epic-btn {
+@apply px-5 py-3 rounded-xl
+bg-blue-600 hover:bg-blue-700
+text-white font-semibold
+shadow-lg transition;
+}
+
+/* ==========================================================
+EPIC GRID
+========================================================== */
+
+.epics-grid {
+@apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.epic-card {
+@apply bg-white rounded-3xl p-6 shadow-lg;
+}
+
+.epic-card-header {
+@apply flex items-center gap-4 mb-5;
+}
+
+.epic-avatar {
+@apply h-14 w-14 rounded-2xl
+flex items-center justify-center
+text-white font-bold text-lg;
+
+background:
+linear-gradient(
+135deg,
+#4f46e5,
+#7c3aed
+);
+}
+
+.epic-name {
+@apply text-lg font-semibold text-slate-900;
+}
+
+.epic-project {
+@apply text-sm text-slate-500;
+}
+
+.epic-description {
+@apply text-slate-600 mb-5;
+}
+
+.epic-actions {
+@apply flex gap-3;
+}
+
+/* ==========================================================
+EPIC FORM
+========================================================== */
+
+.epic-form-page {
+@apply max-w-5xl mx-auto;
+}
+
+.epic-form-header {
+@apply flex justify-between items-center mb-8;
+}
+
+.epic-form-title {
+@apply text-4xl font-bold text-slate-900;
+}
+
+.epic-form-subtitle {
+@apply text-slate-500 mt-2;
+}
+
+.epic-form-card {
+@apply bg-white rounded-3xl shadow-lg p-8;
+}
+
+/* ==========================================================
+EPIC SHOW PAGE
+========================================================== */
+
+.epic-show-page {
+@apply space-y-8;
+}
+
+.epic-show-header {
+@apply flex justify-between items-center;
+}
+
+.epic-show-title {
+@apply text-4xl font-bold text-slate-900;
+}
+
+.epic-show-project {
+@apply text-slate-500 mt-2;
+}
+
+.epic-details-card {
+@apply bg-white rounded-3xl shadow-lg p-8;
+}
+
+
+/* ==========================================================
    LOGIN PAGE
 ========================================================== */
 

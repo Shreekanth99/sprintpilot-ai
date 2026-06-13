@@ -1,0 +1,62 @@
+<%= form_with(model: @epic, class: "epic-form") do |form| %>
+
+  <% if @epic.errors.any? %>
+
+    <div class="flash-error">
+
+      <ul>
+
+        <% @epic.errors.full_messages.each do |message| %>
+
+          <li><%= message %></li>
+
+        <% end %>
+
+      </ul>
+
+    </div>
+
+  <% end %>
+
+  <div>
+
+    <%= form.label :title,
+        class: "form-label" %>
+
+    <%= form.text_field :title,
+        class: "form-input" %>
+
+  </div>
+
+  <div>
+
+    <%= form.label :description,
+        class: "form-label" %>
+
+    <%= form.text_area :description,
+        rows: 5,
+        class: "form-input" %>
+
+  </div>
+
+  <div>
+
+    <%= form.label :project_id,
+        class: "form-label" %>
+
+    <%= form.collection_select :project_id,
+        Project.order(:name),
+        :id,
+        :name,
+        {},
+        class: "form-select" %>
+
+  </div>
+
+  <div class="form-actions">
+
+    <%= form.submit class: "primary-btn" %>
+
+  </div>
+
+<% end %>

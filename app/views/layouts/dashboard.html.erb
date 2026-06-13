@@ -1,191 +1,82 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>SprintPilot AI</title>
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+<%= stylesheet_link_tag "application",
+"data-turbo-track": "reload" %>
+
 </head>
 
 <body class="dashboard-body">
 
-<div class="dashboard-layout">
+  <div class="dashboard-layout">
 
-  <!-- Sidebar -->
-  <aside class="sidebar">
+<%= render "shared/sidebar" %>
 
-    <div class="sidebar-header">
+<main class="main-content">
 
-      <div class="sidebar-brand">
+  <header class="top-navbar">
 
-        <div class="sidebar-logo">
-          SP
-        </div>
+    <div>
 
-        <div>
+      <h2 class="page-heading">
+        SprintPilot Dashboard
+      </h2>
 
-          <h1 class="sidebar-title">
-            SprintPilot AI
-          </h1>
-
-          <p class="sidebar-subtitle">
-            Agile Intelligence Platform
-          </p>
-
-        </div>
-
-      </div>
+      <p class="page-description">
+        AI-powered project management workspace
+      </p>
 
     </div>
 
-    <nav class="sidebar-nav">
+    <div class="navbar-right">
 
-      <%= link_to dashboard_path,
-          class: "sidebar-link #{current_page?(dashboard_path) ? 'sidebar-link-active' : ''}" do %>
-
-        <span>📊</span>
-        Dashboard
-
-      <% end %>
-
-      <%= link_to organizations_path,
-          class: "sidebar-link #{current_page?(organizations_path) ? 'sidebar-link-active' : ''}" do %>
-
-        <span>🏢</span>
-        Organizations
-
-      <% end %>
-
-      <%= link_to projects_path,
-          class: "sidebar-link #{current_page?(projects_path) ? 'sidebar-link-active' : ''}" do %>
-
-        <span>🚀</span>
-        Projects
-
-      <% end %>
-
-      <%= link_to "#",
-          class: "sidebar-link" do %>
-
-        <span>🏃</span>
-        Sprints
-
-      <% end %>
-
-      <%= link_to "#",
-          class: "sidebar-link" do %>
-
-        <span>📖</span>
-        Stories
-
-      <% end %>
-
-      <%= link_to "#",
-          class: "sidebar-link" do %>
-
-        <span>🤖</span>
-        AI Assistant
-
-      <% end %>
-
-      <%= link_to "#",
-          class: "sidebar-link" do %>
-
-        <span>⚙️</span>
-        Settings
-
-      <% end %>
-
-    </nav>
-
-    <div class="sidebar-footer">
-
-      <div class="user-mini-card">
-
-        <div class="user-mini-avatar">
-          <%= current_user.email.first.upcase %>
-        </div>
+      <div class="user-profile">
 
         <div>
 
-          <p class="user-mini-name">
+          <p class="user-name">
             <%= current_user.name.presence || "Admin User" %>
           </p>
 
-          <p class="user-mini-email">
-            <%= current_user.email %>
+          <p class="user-role">
+            Super Admin
           </p>
 
         </div>
 
-      </div>
-
-    </div>
-
-  </aside>
-
-  <!-- Main Content -->
-  <main class="main-content">
-
-    <header class="top-navbar">
-
-      <div>
-
-        <h2 class="page-heading">
-          SprintPilot Dashboard
-        </h2>
-
-        <p class="page-description">
-          AI-powered project management workspace
-        </p>
-
-      </div>
-
-      <div class="navbar-right">
-
-        <div class="user-profile">
-
-          <div>
-
-            <p class="user-name">
-              <%= current_user.name.presence || "Admin User" %>
-            </p>
-
-            <p class="user-role">
-              Super Admin
-            </p>
-
-          </div>
-
-          <div class="user-avatar">
-            <%= current_user.email.first.upcase %>
-          </div>
-
+        <div class="user-avatar">
+          <%= current_user.email.first.upcase %>
         </div>
 
-        <%= button_to destroy_user_session_path,
-              method: :delete,
-              class: "logout-btn" do %>
-
-          Logout
-
-        <% end %>
-
       </div>
 
-    </header>
+      <%= button_to destroy_user_session_path,
+            method: :delete,
+            class: "logout-btn" do %>
 
-    <div class="page-content">
-      <%= yield %>
+        Logout
+
+      <% end %>
+
     </div>
 
-  </main>
+  </header>
 
-</div>
+  <div class="page-content">
+    <%= yield %>
+  </div>
+
+</main>
+
+  </div>
 
 </body>
 </html>

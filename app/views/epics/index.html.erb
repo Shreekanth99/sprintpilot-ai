@@ -1,0 +1,75 @@
+<div class="epics-page">
+
+  <div class="epics-header">
+
+    <div>
+      <h1 class="epics-title">Epics</h1>
+
+      <p class="epics-subtitle">
+        Manage project epics and high-level features.
+      </p>
+    </div>
+
+    <%= link_to "＋ New Epic",
+        new_epic_path,
+        class: "new-epic-btn" %>
+
+  </div>
+
+  <% if @epics.any? %>
+
+    <div class="epics-grid">
+
+      <% @epics.each do |epic| %>
+
+        <div class="epic-card">
+
+          <div class="epic-card-header">
+
+            <div class="epic-avatar">
+              <%= epic.title.first.upcase %>
+            </div>
+
+            <div>
+              <h3 class="epic-name">
+                <%= epic.title %>
+              </h3>
+
+              <p class="epic-project">
+                <%= epic.project.name %>
+              </p>
+            </div>
+
+          </div>
+
+          <p class="epic-description">
+            <%= truncate(epic.description, length: 120) %>
+          </p>
+
+          <div class="epic-actions">
+
+            <%= link_to "View",
+                epic,
+                class: "btn-view" %>
+
+            <%= link_to "Edit",
+                edit_epic_path(epic),
+                class: "btn-edit" %>
+
+            <%= button_to "Delete",
+                epic,
+                method: :delete,
+                data: { turbo_confirm: "Delete this epic?" },
+                class: "btn-delete" %>
+
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+  <% end %>
+
+</div>

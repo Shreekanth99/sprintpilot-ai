@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   resources :organizations
   resources :projects
+  resources :epics
+  resources :sprints
 end

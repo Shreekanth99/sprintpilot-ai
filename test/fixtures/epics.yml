@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
+  title: User Authentication
+  description: Login and registration functionality
   project: one
 
 two:
-  title: MyString
-  description: MyText
+  title: AI Planning
+  description: AI sprint planning features
   project: two

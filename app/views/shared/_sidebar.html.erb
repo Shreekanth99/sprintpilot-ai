@@ -1,24 +1,37 @@
-<aside class="w-72 bg-slate-950 text-white">
+<aside class="sidebar">
 
-  <div class="p-6 border-b border-slate-800">
+  <div class="sidebar-header">
 
-    <h1 class="text-2xl font-bold text-blue-400">
-      SprintPilot AI
-    </h1>
+    <div class="sidebar-brand">
 
-    <p class="text-sm text-slate-400">
-      Agile Management Platform
-    </p>
+      <div class="sidebar-logo">
+        SP
+      </div>
+
+      <div>
+
+        <h1 class="sidebar-title">
+          SprintPilot AI
+        </h1>
+
+        <p class="sidebar-subtitle">
+          Agile Intelligence Platform
+        </p>
+
+      </div>
+
+    </div>
 
   </div>
 
-  <nav class="p-4 space-y-2">
+  <nav class="sidebar-nav">
 
     <%= link_to dashboard_path,
         data: { turbo_frame: "_top" },
         class: sidebar_class(dashboard_path) do %>
 
-      📊 Dashboard
+      <span>📊</span>
+      Dashboard
 
     <% end %>
 
@@ -26,7 +39,8 @@
         data: { turbo_frame: "_top" },
         class: sidebar_class(organizations_path) do %>
 
-      🏢 Organizations
+      <span>🏢</span>
+      Organizations
 
     <% end %>
 
@@ -34,10 +48,84 @@
         data: { turbo_frame: "_top" },
         class: sidebar_class(projects_path) do %>
 
-      🚀 Projects
+      <span>🚀</span>
+      Projects
+
+    <% end %>
+
+    <%= link_to epics_path,
+        data: { turbo_frame: "_top" },
+        class: sidebar_class(epics_path) do %>
+
+      <span>🎯</span>
+      Epics
+
+    <% end %>
+
+    <%= link_to "#",
+        class: sidebar_class("#") do %>
+
+      <span>🏃</span>
+      Sprints
+
+    <% end %>
+
+    <%= link_to "#",
+        class: sidebar_class("#") do %>
+
+      <span>📖</span>
+      Stories
+
+    <% end %>
+
+    <%= link_to "#",
+        class: sidebar_class("#") do %>
+
+      <span>✅</span>
+      Tasks
+
+    <% end %>
+
+    <%= link_to "#",
+        class: sidebar_class("#") do %>
+
+      <span>🤖</span>
+      AI Assistant
+
+    <% end %>
+
+    <%= link_to "#",
+        class: sidebar_class("#") do %>
+
+      <span>⚙️</span>
+      Settings
 
     <% end %>
 
   </nav>
+
+  <div class="sidebar-footer">
+
+    <div class="user-mini-card">
+
+      <div class="user-mini-avatar">
+        <%= current_user.email.first.upcase %>
+      </div>
+
+      <div>
+
+        <p class="user-mini-name">
+          <%= current_user.name.presence || "Admin User" %>
+        </p>
+
+        <p class="user-mini-email">
+          <%= current_user.email %>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </aside>

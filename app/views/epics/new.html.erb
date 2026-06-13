@@ -1,0 +1,29 @@
+<div class="epic-form-page">
+
+  <div class="epic-form-header">
+
+    <div>
+
+      <h1 class="epic-form-title">
+        Create Epic
+      </h1>
+
+      <p class="epic-form-subtitle">
+        Create a high-level feature for your project.
+      </p>
+
+    </div>
+
+    <%= link_to "← Back",
+        epics_path,
+        class: "back-btn" %>
+
+  </div>
+
+  <div class="epic-form-card">
+
+    <%= render "form" %>
+
+  </div>
+
+</div>
