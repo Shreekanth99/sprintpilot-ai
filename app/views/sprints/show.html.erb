@@ -1,0 +1,60 @@
+<div class="sprint-show-page">
+
+  <div class="sprint-show-header">
+
+    <div>
+
+      <h1 class="sprint-show-title">
+        <%= @sprint.name %>
+      </h1>
+
+      <p class="sprint-show-project">
+        <%= @sprint.project.name %>
+      </p>
+
+    </div>
+
+    <div class="show-actions">
+
+      <%= link_to "Edit",
+          edit_sprint_path(@sprint),
+          class: "btn-edit" %>
+
+      <%= link_to "Back",
+          sprints_path,
+          class: "back-btn" %>
+
+    </div>
+
+  </div>
+
+  <div class="sprint-details-card">
+
+    <h2 class="section-title">
+      Sprint Goal
+    </h2>
+
+    <p>
+      <%= @sprint.goal %>
+    </p>
+
+    <hr class="my-6">
+
+    <p>
+      <strong>Status:</strong>
+      <%= @sprint.status %>
+    </p>
+
+    <p>
+      <strong>Start Date:</strong>
+      <%= @sprint.start_date %>
+    </p>
+
+    <p>
+      <strong>End Date:</strong>
+      <%= @sprint.end_date %>
+    </p>
+
+  </div>
+
+</div>

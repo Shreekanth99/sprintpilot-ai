@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :projects
   resources :epics
   resources :sprints
+  resources :stories
+  resources :tasks
 end

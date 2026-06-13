@@ -1,0 +1,55 @@
+<div class="tasks-page">
+
+  <div class="tasks-header">
+
+    <h1 class="tasks-title">
+      Tasks
+    </h1>
+
+    <%= link_to "New Task",
+        new_task_path,
+        class: "primary-btn" %>
+
+  </div>
+
+  <div class="tasks-grid">
+
+    <% @tasks.each do |task| %>
+
+      <div class="task-card">
+
+        <h3>
+          <%= task.title %>
+        </h3>
+
+        <p>
+          <%= task.story.title %>
+        </p>
+
+        <p>
+          <%= task.status %>
+        </p>
+
+        <p>
+          <%= task.assignee&.email || "Unassigned" %>
+        </p>
+
+        <div class="task-actions">
+
+          <%= link_to "View",
+              task,
+              class: "btn-view" %>
+
+          <%= link_to "Edit",
+              edit_task_path(task),
+              class: "btn-edit" %>
+
+        </div>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

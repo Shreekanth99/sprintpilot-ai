@@ -1,0 +1,87 @@
+<div class="sprints-page">
+
+  <div class="sprints-header">
+
+    <div>
+
+      <h1 class="sprints-title">
+        Sprints
+      </h1>
+
+      <p class="sprints-subtitle">
+        Manage sprint planning and execution.
+      </p>
+
+    </div>
+
+    <%= link_to "＋ New Sprint",
+        new_sprint_path,
+        class: "new-sprint-btn" %>
+
+  </div>
+
+  <% if @sprints.any? %>
+
+    <div class="sprints-grid">
+
+      <% @sprints.each do |sprint| %>
+
+        <div class="sprint-card">
+
+          <div class="sprint-card-header">
+
+            <div class="sprint-avatar">
+              🏃
+            </div>
+
+            <div>
+
+              <h3 class="sprint-name">
+                <%= sprint.name %>
+              </h3>
+
+              <p class="sprint-project">
+                <%= sprint.project.name %>
+              </p>
+
+            </div>
+
+          </div>
+
+          <p class="sprint-goal">
+            <%= truncate(sprint.goal, length: 100) %>
+          </p>
+
+          <div class="sprint-status">
+            <%= sprint.status %>
+          </div>
+
+          <div class="sprint-actions">
+
+            <%= link_to "View",
+                sprint,
+                class: "btn-view" %>
+
+            <%= link_to "Edit",
+                edit_sprint_path(sprint),
+                class: "btn-edit" %>
+
+            <%= button_to "Delete",
+                sprint,
+                method: :delete,
+                data: {
+                  turbo_confirm: "Delete sprint?"
+                },
+                class: "btn-delete" %>
+
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+  <% end %>
+
+</div>

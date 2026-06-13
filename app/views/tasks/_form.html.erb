@@ -1,0 +1,80 @@
+<%= form_with(model: @task, class: "task-form") do |form| %>
+
+  <div class="task-form-grid">
+
+    <div class="task-full-width">
+
+      <%= form.label :title,
+          class: "form-label" %>
+
+      <%= form.text_field :title,
+          class: "form-input" %>
+
+    </div>
+
+    <div class="task-full-width">
+
+      <%= form.label :description,
+          class: "form-label" %>
+
+      <%= form.text_area :description,
+          rows: 5,
+          class: "form-textarea" %>
+
+    </div>
+
+    <div>
+
+      <%= form.label :status,
+          class: "form-label" %>
+
+      <%= form.select :status,
+          Task.statuses.keys,
+          {},
+          class: "form-select" %>
+
+    </div>
+
+    <div>
+
+      <%= form.label :story_id,
+          "Story",
+          class: "form-label" %>
+
+      <%= form.collection_select :story_id,
+          Story.order(:title),
+          :id,
+          :title,
+          {},
+          class: "form-select" %>
+
+    </div>
+
+    <div>
+
+      <%= form.label :assignee_id,
+          "Assignee",
+          class: "form-label" %>
+
+      <%= form.collection_select :assignee_id,
+          User.order(:email),
+          :id,
+          :email,
+          { include_blank: "Unassigned" },
+          class: "form-select" %>
+
+    </div>
+
+  </div>
+
+  <div class="form-actions">
+
+    <%= link_to "Cancel",
+        tasks_path,
+        class: "cancel-btn" %>
+
+    <%= form.submit class: "primary-btn" %>
+
+  </div>
+
+<% end %>

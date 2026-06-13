@@ -1,0 +1,90 @@
+<%= form_with(model: @story, class: "story-form") do |form| %>
+
+  <div class="story-form-grid">
+
+    <div class="story-full-width">
+
+      <%= form.label :title,
+          class: "form-label" %>
+
+      <%= form.text_field :title,
+          class: "form-input" %>
+
+    </div>
+
+    <div class="story-full-width">
+
+      <%= form.label :description,
+          class: "form-label" %>
+
+      <%= form.text_area :description,
+          rows: 5,
+          class: "form-textarea" %>
+
+    </div>
+
+    <div>
+
+      <%= form.label :story_points,
+          class: "form-label" %>
+
+      <%= form.number_field :story_points,
+          class: "form-input" %>
+
+    </div>
+
+    <div>
+
+      <%= form.label :status,
+          class: "form-label" %>
+
+      <%= form.select :status,
+          Story.statuses.keys,
+          {},
+          class: "form-select" %>
+
+    </div>
+
+    <div>
+
+      <%= form.label :epic_id,
+          "Epic",
+          class: "form-label" %>
+
+      <%= form.collection_select :epic_id,
+          Epic.order(:title),
+          :id,
+          :title,
+          {},
+          class: "form-select" %>
+
+    </div>
+
+    <div>
+
+      <%= form.label :sprint_id,
+          "Sprint",
+          class: "form-label" %>
+
+      <%= form.collection_select :sprint_id,
+          Sprint.order(:name),
+          :id,
+          :name,
+          { include_blank: "Backlog" },
+          class: "form-select" %>
+
+    </div>
+
+  </div>
+
+  <div class="form-actions">
+
+    <%= link_to "Cancel",
+        stories_path,
+        class: "cancel-btn" %>
+
+    <%= form.submit class: "primary-btn" %>
+
+  </div>
+
+<% end %>

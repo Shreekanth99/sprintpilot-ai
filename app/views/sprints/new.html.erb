@@ -1,0 +1,25 @@
+<div class="sprint-page">
+
+  <div class="sprint-page-header">
+
+    <div>
+      <h1 class="sprint-page-title">
+        Create Sprint
+      </h1>
+
+      <p class="sprint-page-subtitle">
+        Plan and organize your next development sprint.
+      </p>
+    </div>
+
+    <%= link_to "← Back to Sprints",
+        sprints_path,
+        class: "secondary-btn" %>
+
+  </div>
+
+  <div class="sprint-form-card">
+    <%= render "form" %>
+  </div>
+
+</div>

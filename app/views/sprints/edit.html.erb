@@ -1,0 +1,29 @@
+<div class="sprint-form-page">
+
+  <div class="sprint-form-header">
+
+    <div>
+
+      <h1 class="sprint-form-title">
+        Edit Sprint
+      </h1>
+
+      <p class="sprint-form-subtitle">
+        Update sprint information.
+      </p>
+
+    </div>
+
+    <%= link_to "← Back",
+        sprints_path,
+        class: "back-btn" %>
+
+  </div>
+
+  <div class="sprint-form-card">
+
+    <%= render "form" %>
+
+  </div>
+
+</div>

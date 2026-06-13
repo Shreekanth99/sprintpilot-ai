@@ -1,0 +1,57 @@
+<div class="stories-page">
+
+  <div class="stories-header">
+
+    <h1 class="stories-title">
+      Stories
+    </h1>
+
+    <%= link_to "New Story",
+        new_story_path,
+        class: "primary-btn" %>
+
+  </div>
+
+  <div class="stories-grid">
+
+    <% @stories.each do |story| %>
+
+      <div class="story-item-card">
+
+        <h3>
+          <%= story.title %>
+        </h3>
+
+        <p>
+          <%= story.epic.title %>
+        </p>
+
+        <p>
+          Points:
+          <%= story.story_points %>
+        </p>
+
+        <p>
+          Status:
+          <%= story.status %>
+        </p>
+
+        <div class="story-actions">
+
+          <%= link_to "View",
+              story,
+              class: "btn-view" %>
+
+          <%= link_to "Edit",
+              edit_story_path(story),
+              class: "btn-edit" %>
+
+        </div>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

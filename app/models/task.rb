@@ -11,4 +11,7 @@ class Task < ApplicationRecord
     review: 2,
     done: 3
   }
+
+  validates :title,
+            presence: true
 end

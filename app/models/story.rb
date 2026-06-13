@@ -4,6 +4,7 @@ class Story < ApplicationRecord
 
   has_many :tasks, dependent: :destroy
 
+
   enum :status, {
     backlog: 0,
     todo: 1,
