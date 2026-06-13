@@ -1403,6 +1403,7 @@ EPIC SHOW PAGE
          hover:bg-slate-100
          text-slate-700 font-semibold;
 }
+
 /* ==========================================================
    SPRINT SHOW
 ========================================================== */
@@ -1467,7 +1468,6 @@ EPIC SHOW PAGE
 .story-show-card {
   @apply bg-white rounded-3xl p-8 shadow-lg;
 }
-
 
 /* ==========================================================
    TASKS PAGE
