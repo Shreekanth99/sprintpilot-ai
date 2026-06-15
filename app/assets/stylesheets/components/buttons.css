@@ -1,0 +1,39 @@
+.btn {
+  padding: .85rem 1.4rem;
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background: var(--brand-primary);
+
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: var(--card-bg);
+
+  border: 1px solid var(--border-color);
+
+  color: var(--text-primary);
+}
+
+.btn-danger {
+  background: var(--danger);
+
+  color: white;
+}
+
+.btn-success {
+  background: var(--success);
+
+  color: white;
+}

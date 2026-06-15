@@ -1,0 +1,23 @@
+.sprints-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(320px, 1fr)
+    );
+
+  gap: 1.5rem;
+}
+
+.sprint-card {
+  position: relative;
+}
+
+.sprint-dates {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 1rem;
+}

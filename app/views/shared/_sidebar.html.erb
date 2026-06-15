@@ -44,6 +44,15 @@
 
     <% end %>
 
+    <%= link_to teams_path,
+        data: { turbo_frame: "_top" },
+        class: sidebar_class(teams_path) do %>
+
+      <span>👥</span>
+      Teams
+
+    <% end %>
+
     <%= link_to projects_path,
         data: { turbo_frame: "_top" },
         class: sidebar_class(projects_path) do %>
@@ -63,7 +72,8 @@
     <% end %>
 
     <%= link_to sprints_path,
-        class: sidebar_class("#") do %>
+        data: { turbo_frame: "_top" },
+        class: sidebar_class(sprints_path) do %>
 
       <span>🏃</span>
       Sprints
@@ -71,7 +81,8 @@
     <% end %>
 
     <%= link_to stories_path,
-        class: sidebar_class("#") do %>
+        data: { turbo_frame: "_top" },
+        class: sidebar_class(stories_path) do %>
 
       <span>📖</span>
       Stories
@@ -79,7 +90,8 @@
     <% end %>
 
     <%= link_to tasks_path,
-        class: sidebar_class("#") do %>
+        data: { turbo_frame: "_top" },
+        class: sidebar_class(tasks_path) do %>
 
       <span>✅</span>
       Tasks
@@ -94,38 +106,6 @@
 
     <% end %>
 
-    <%= link_to "#",
-        class: sidebar_class("#") do %>
-
-      <span>⚙️</span>
-      Settings
-
-    <% end %>
-
   </nav>
-
-  <div class="sidebar-footer">
-
-    <div class="user-mini-card">
-
-      <div class="user-mini-avatar">
-        <%= current_user.email.first.upcase %>
-      </div>
-
-      <div>
-
-        <p class="user-mini-name">
-          <%= current_user.name.presence || "Admin User" %>
-        </p>
-
-        <p class="user-mini-email">
-          <%= current_user.email %>
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </aside>

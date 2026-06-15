@@ -1,0 +1,40 @@
+.sidebar {
+  width: 260px;
+
+  height: 100vh;
+
+  position: sticky;
+
+  top: 0;
+
+  background:
+    rgba(2,6,23,.92);
+
+  backdrop-filter: blur(20px);
+
+  border-right:
+    1px solid rgba(255,255,255,.08);
+
+  color: white;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.sidebar-link {
+  transition: .3s ease;
+}
+
+.sidebar-link:hover {
+  background: #1e293b;
+}
+
+.sidebar-link-active {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #3b82f6
+    );
+}

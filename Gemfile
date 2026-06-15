@@ -69,3 +69,5 @@ end
 gem "devise", "~> 5.0"
 
 gem "pundit"
+
+gem "jsbundling-rails", "~> 1.3"

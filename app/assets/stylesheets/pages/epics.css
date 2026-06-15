@@ -1,0 +1,23 @@
+.epics-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(350px, 1fr)
+    );
+
+  gap: 1.5rem;
+}
+
+.epic-card {
+  min-height: 240px;
+}
+
+.epic-meta {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 1rem;
+}

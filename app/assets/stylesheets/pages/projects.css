@@ -1,0 +1,47 @@
+.projects-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(340px, 1fr)
+    );
+
+  gap: 1.5rem;
+}
+
+.project-progress {
+  margin-top: 1rem;
+}
+
+.project-progress-bar {
+  height: .6rem;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+    rgba(148,163,184,.2);
+}
+
+.project-progress-fill {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
+}

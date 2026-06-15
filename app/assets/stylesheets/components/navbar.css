@@ -1,0 +1,28 @@
+.top-navbar {
+  background: var(--navbar-bg);
+
+  backdrop-filter: blur(16px);
+
+  border-bottom:
+    1px solid var(--border-color);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 50;
+
+  padding: 1.25rem 2rem;
+}
+
+.page-heading {
+  color: var(--text-primary);
+
+  font-size: 2rem;
+
+  font-weight: 700;
+}
+
+.page-description {
+  color: var(--text-secondary);
+}

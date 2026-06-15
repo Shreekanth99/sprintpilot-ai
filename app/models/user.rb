@@ -13,4 +13,9 @@ class User < ApplicationRecord
     manager: 2,
     developer: 3
   }
+
+  enum :theme, {
+    light: 0,
+    dark: 1
+  }
 end

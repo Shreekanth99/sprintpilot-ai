@@ -17,4 +17,9 @@ Rails.application.routes.draw do
   resources :sprints
   resources :stories
   resources :tasks
+  resources :teams
+
+  resource :settings, only: [] do
+    patch :theme
+  end
 end

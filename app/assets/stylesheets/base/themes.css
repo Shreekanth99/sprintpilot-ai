@@ -1,0 +1,31 @@
+.theme-light {
+  --bg-primary: #f8fafc;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37,99,235,.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(124,58,237,.08),
+      transparent 25%
+    ),
+    #f8fafc;
+}
+
+.theme-dark {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37,99,235,.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(124,58,237,.18),
+      transparent 30%
+    ),
+    #020617;
+}

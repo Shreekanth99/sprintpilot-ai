@@ -1,0 +1,42 @@
+<%= form_with(model: @team, class: "team-form") do |form| %>
+
+  <div class="team-form-grid">
+
+    <div class="team-full-width">
+
+      <%= form.label :name,
+          class: "form-label" %>
+
+      <%= form.text_field :name,
+          class: "form-input" %>
+
+    </div>
+
+    <div>
+
+      <%= form.label :organization_id,
+          "Organization",
+          class: "form-label" %>
+
+      <%= form.collection_select :organization_id,
+          Organization.order(:name),
+          :id,
+          :name,
+          {},
+          class: "form-select" %>
+
+    </div>
+
+  </div>
+
+  <div class="form-actions">
+
+    <%= link_to "Cancel",
+        teams_path,
+        class: "cancel-btn" %>
+
+    <%= form.submit class: "primary-btn" %>
+
+  </div>
+
+<% end %>

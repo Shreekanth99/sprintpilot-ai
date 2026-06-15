@@ -1,0 +1,33 @@
+.organizations-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+.organizations-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(320px, 1fr)
+    );
+
+  gap: 1.5rem;
+}
+
+.organization-card {
+  position: relative;
+}
+
+.organization-card-actions {
+  display: flex;
+
+  gap: .75rem;
+
+  margin-top: 1rem;
+}

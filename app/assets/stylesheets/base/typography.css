@@ -1,0 +1,17 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.page-heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-description {
+  margin-top: .25rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}

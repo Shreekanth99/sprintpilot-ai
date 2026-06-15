@@ -1,0 +1,55 @@
+<div class="teams-page">
+
+  <div class="teams-header">
+
+    <div>
+
+      <h1 class="teams-title">
+        Teams
+      </h1>
+
+      <p class="teams-subtitle">
+        Manage development teams.
+      </p>
+
+    </div>
+
+    <%= link_to "New Team",
+        new_team_path,
+        class: "primary-btn" %>
+
+  </div>
+
+  <div class="teams-grid">
+
+    <% @teams.each do |team| %>
+
+      <div class="team-card">
+
+        <h3 class="team-name">
+          <%= team.name %>
+        </h3>
+
+        <p class="team-org">
+          <%= team.organization.name %>
+        </p>
+
+        <div class="team-actions">
+
+          <%= link_to "View",
+              team,
+              class: "btn-view" %>
+
+          <%= link_to "Edit",
+              edit_team_path(team),
+              class: "btn-edit" %>
+
+        </div>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

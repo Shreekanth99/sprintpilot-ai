@@ -1,0 +1,58 @@
+.teams-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(320px, 1fr)
+    );
+
+  gap: 1.5rem;
+}
+
+.team-card-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 1rem;
+}
+
+.team-members {
+  margin-top: 1rem;
+}
+
+.team-member {
+  display: flex;
+
+  align-items: center;
+
+  gap: .75rem;
+
+  margin-bottom: .75rem;
+}
+
+.team-avatar {
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}

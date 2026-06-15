@@ -1,0 +1,25 @@
+.stories-table-wrapper {
+  overflow-x: auto;
+}
+
+.stories-table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.stories-table th {
+  text-align: left;
+
+  padding: 1rem;
+
+  border-bottom:
+    1px solid var(--border-color);
+}
+
+.stories-table td {
+  padding: 1rem;
+
+  border-bottom:
+    1px solid var(--border-color);
+}

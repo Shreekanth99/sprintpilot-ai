@@ -21,48 +21,6 @@ body {
   @apply flex h-screen overflow-hidden;
 }
 
-/* ==========================================================
-   SIDEBAR
-========================================================== */
-
-.sidebar {
-  @apply w-72 bg-slate-950 text-white flex flex-col shadow-2xl;
-}
-
-.sidebar-header {
-  @apply p-6 border-b border-slate-800;
-}
-
-.sidebar-logo {
-  @apply h-12 w-12 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600
-         flex items-center justify-center text-xl font-bold;
-}
-
-.sidebar-title {
-  @apply text-xl font-bold;
-}
-
-.sidebar-subtitle {
-  @apply text-xs text-slate-400;
-}
-
-.sidebar-nav {
-  @apply flex-1 p-4 space-y-2;
-}
-
-.sidebar-link {
-  @apply flex items-center gap-3 px-4 py-3 rounded-xl
-         text-slate-300 hover:bg-slate-800
-         hover:text-white transition duration-300;
-}
-
-.sidebar-link-active {
-  @apply bg-blue-600 text-white shadow-lg;
-}
-
-.sidebar-footer {
-  @apply border-t border-slate-800 p-5;
-}
 
 /* ==========================================================
    TOP NAVBAR
@@ -163,17 +121,22 @@ body {
   @apply flex h-screen overflow-hidden;
 }
 
-/* =========================================
+
+/* ==========================================================
    SIDEBAR
-========================================= */
+========================================================== */
 
 .sidebar {
-  @apply w-72 flex flex-col;
-  background: linear-gradient(
-    180deg,
-    #020617 0%,
-    #0f172a 100%
-  );
+  @apply w-72
+         bg-slate-950
+         text-white
+         flex
+         flex-col
+         shadow-2xl;
+
+  height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .sidebar-header {
@@ -186,8 +149,8 @@ body {
 
 .sidebar-logo {
   @apply h-14 w-14 rounded-2xl
-         text-white font-bold text-xl
-         flex items-center justify-center;
+         flex items-center justify-center
+         text-xl font-bold text-white;
 
   background: linear-gradient(
     135deg,
@@ -206,6 +169,8 @@ body {
 
 .sidebar-nav {
   @apply flex-1 p-4 space-y-2;
+
+  overflow-y: auto;
 }
 
 .sidebar-link {
@@ -220,39 +185,15 @@ body {
 }
 
 .sidebar-link-active {
+  @apply text-white shadow-lg;
+
   background: linear-gradient(
     135deg,
     #2563eb,
     #3b82f6
   );
-
-  @apply text-white shadow-lg;
 }
 
-.sidebar-footer {
-  @apply p-5 border-t border-slate-800;
-}
-
-.user-mini-card {
-  @apply flex items-center gap-3;
-}
-
-.user-mini-avatar {
-  @apply h-10 w-10 rounded-full
-         bg-gradient-to-r
-         from-blue-500
-         to-purple-600
-         text-white font-bold
-         flex items-center justify-center;
-}
-
-.user-mini-name {
-  @apply text-sm font-semibold text-white;
-}
-
-.user-mini-email {
-  @apply text-xs text-slate-400;
-}
 
 /* =========================================
    MAIN CONTENT
@@ -882,108 +823,6 @@ body {
 .organization-details-card:hover {
   @apply shadow-2xl;
   transition: all 0.3s ease;
-}
-
-
-/* ==========================================================
-   SIDEBAR
-========================================================== */
-
-.sidebar {
-  @apply w-72
-         bg-slate-950
-         text-white
-         h-screen
-         flex
-         flex-col
-         shadow-2xl;
-}
-
-/* Logo Area */
-
-.sidebar-header {
-  @apply p-6
-         border-b
-         border-slate-800;
-}
-
-.sidebar-logo {
-  @apply text-2xl
-         font-bold
-         text-blue-400;
-}
-
-.sidebar-subtitle {
-  @apply text-sm
-         text-slate-400
-         mt-1;
-}
-
-/* Navigation */
-
-.sidebar-nav {
-  @apply flex-1
-         p-4
-         space-y-2;
-}
-
-.sidebar-link {
-  @apply flex
-         items-center
-         gap-3
-         px-4
-         py-3
-         rounded-xl
-         text-slate-300
-         hover:bg-slate-800
-         hover:text-white
-         transition-all
-         duration-300;
-}
-
-.sidebar-link-active {
-  @apply bg-gradient-to-r
-         from-blue-600
-         to-blue-700
-         text-white
-         shadow-lg;
-}
-
-/* Footer */
-
-.sidebar-footer {
-  @apply p-5
-         border-t
-         border-slate-800;
-}
-
-.sidebar-user-email {
-  @apply text-sm
-         text-slate-300
-         truncate;
-}
-
-.sidebar-user-role {
-  @apply text-xs
-         text-slate-500;
-}
-
-/* ==========================================================
-   EDIT PAGE HEADER ICON
-========================================================== */
-
-.edit-page-icon {
-  @apply h-12 w-12
-         rounded-2xl
-         bg-gradient-to-r
-         from-amber-500
-         to-orange-600
-         text-white
-         flex items-center
-         justify-center
-         text-lg
-         font-bold
-         shadow-lg;
 }
 
 
@@ -1894,6 +1733,86 @@ EPIC SHOW PAGE
 }
 
 /* ==========================================================
+   TEAMS PAGE
+========================================================== */
+
+.teams-page {
+  @apply space-y-8;
+}
+
+.teams-header {
+  @apply flex items-center justify-between;
+}
+
+.teams-title {
+  @apply text-4xl font-bold text-slate-900;
+}
+
+.teams-subtitle {
+  @apply text-slate-500 mt-2;
+}
+
+.teams-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.team-card {
+  @apply bg-white rounded-3xl
+         p-6 shadow-lg
+         border border-slate-200;
+}
+
+.team-name {
+  @apply text-xl font-bold text-slate-900;
+}
+
+.team-org {
+  @apply text-blue-600 mt-2;
+}
+
+.team-description {
+  @apply text-slate-600 mt-4;
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.team-page {
+  @apply max-w-6xl mx-auto;
+}
+
+.team-page-header {
+  @apply mb-8;
+}
+
+.team-page-title {
+  @apply text-5xl font-bold text-slate-900;
+}
+
+.team-page-subtitle {
+  @apply text-slate-500 mt-2;
+}
+
+.team-form-card {
+  @apply bg-white rounded-3xl
+         p-10 shadow-xl;
+}
+
+.team-form-grid {
+  @apply grid grid-cols-1 gap-6;
+}
+
+.team-full-width {
+  @apply w-full;
+}
+
+.team-show-card {
+  @apply bg-white rounded-3xl
+         p-8 shadow-lg;
+}
+
+/* ==========================================================
    FLASH MESSAGES
 ========================================================== */
 
@@ -1910,4 +1829,202 @@ EPIC SHOW PAGE
 .flash-info {
   @apply bg-blue-100 border border-blue-300
          text-blue-800 px-4 py-3 rounded-xl;
+}
+
+/* ==========================================================
+   LIGHT THEME
+========================================================== */
+
+.theme-light {
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #eef2ff 100%
+  );
+  color: #1e293b;
+}
+
+.theme-light .main-content {
+  background: transparent;
+}
+
+.theme-light .top-navbar {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.theme-light .page-heading {
+  color: #1e293b;
+}
+
+.theme-light .page-description {
+  color: #64748b;
+}
+
+.theme-light .content-card,
+.theme-light .dashboard-card,
+.theme-light .recent-projects,
+.theme-light .ai-insights {
+  background: white;
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* ==========================================================
+   DARK THEME
+========================================================== */
+
+.theme-dark {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(59, 130, 246, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(147, 51, 234, 0.15),
+      transparent 30%
+    ),
+    #020617;
+
+  color: #f8fafc;
+}
+
+.theme-dark .main-content {
+  background: transparent;
+}
+
+.theme-dark .top-navbar {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #334155;
+}
+
+.theme-dark .page-heading,
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3 {
+  color: #f8fafc;
+}
+
+.theme-dark .page-description {
+  color: #cbd5e1;
+}
+
+.theme-dark .content-card,
+.theme-dark .dashboard-card,
+.theme-dark .recent-projects,
+.theme-dark .ai-insights {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #f8fafc;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select {
+  background: #334155;
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+.theme-dark input::placeholder,
+.theme-dark textarea::placeholder {
+  color: #94a3b8;
+}
+
+.theme-dark table {
+  color: #f8fafc;
+}
+
+.theme-dark th {
+  background: #334155;
+}
+
+.theme-dark td {
+  border-color: #475569;
+}
+
+.theme-dark [data-dropdown-target="menu"] {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.theme-dark [data-dropdown-target="menu"] a,
+.theme-dark [data-dropdown-target="menu"] p {
+  color: #f8fafc;
+}
+
+/* ==========================================================
+   DASHBOARD HERO
+========================================================== */
+
+.dashboard-hero {
+  padding: 2rem;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  color: white;
+
+  box-shadow:
+    0 20px 50px rgba(37, 99, 235, 0.25);
+}
+
+.dashboard-hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.dashboard-hero-subtitle {
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================
+   STATS CARDS
+========================================================== */
+
+.stats-card {
+  transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================
+   PREMIUM SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
 }

@@ -1,0 +1,17 @@
+.dashboard-body {
+  min-height: 100vh;
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+.page-content {
+  padding: 2rem;
+}

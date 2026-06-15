@@ -1,0 +1,42 @@
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+
+  margin-bottom: .5rem;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+
+  padding: .9rem 1rem;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid var(--border-color);
+
+  background: var(--card-bg);
+
+  color: var(--text-primary);
+
+  transition: var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+
+  border-color: var(--brand-primary);
+
+  box-shadow:
+    0 0 0 4px rgba(37,99,235,.15);
+}

@@ -1,80 +1,37 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <title>SprintPilot AI</title>
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<%= csrf_meta_tags %>
-<%= csp_meta_tag %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
 <%= stylesheet_link_tag "application",
-"data-turbo-track": "reload" %>
+    "data-turbo-track": "reload" %>
+
+<%= javascript_include_tag "application",
+    "data-turbo-track": "reload",
+    defer: true %>
 
 </head>
 
-<body class="dashboard-body">
+<body class="dashboard-body <%= theme_class %>">
 
   <div class="dashboard-layout">
 
-<%= render "shared/sidebar" %>
+    <%= render "shared/sidebar" %>
 
-<main class="main-content">
+    <main class="main-content">
 
-  <header class="top-navbar">
+      <%= render "shared/navbar" %>
 
-    <div>
-
-      <h2 class="page-heading">
-        SprintPilot Dashboard
-      </h2>
-
-      <p class="page-description">
-        AI-powered project management workspace
-      </p>
-
-    </div>
-
-    <div class="navbar-right">
-
-      <div class="user-profile">
-
-        <div>
-
-          <p class="user-name">
-            <%= current_user.name.presence || "Admin User" %>
-          </p>
-
-          <p class="user-role">
-            Super Admin
-          </p>
-
-        </div>
-
-        <div class="user-avatar">
-          <%= current_user.email.first.upcase %>
-        </div>
-
+      <div class="page-content">
+        <%= yield %>
       </div>
 
-      <%= button_to destroy_user_session_path,
-            method: :delete,
-            class: "logout-btn" do %>
-
-        Logout
-
-      <% end %>
-
-    </div>
-
-  </header>
-
-  <div class="page-content">
-    <%= yield %>
-  </div>
-
-</main>
+    </main>
 
   </div>
 
