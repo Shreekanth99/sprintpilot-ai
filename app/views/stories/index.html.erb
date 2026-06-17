@@ -2,11 +2,19 @@
 
   <div class="stories-header">
 
-    <h1 class="stories-title">
-      Stories
-    </h1>
+    <div>
 
-    <%= link_to "New Story",
+      <h1 class="stories-title">
+        📖 Stories
+      </h1>
+
+      <p class="stories-subtitle">
+        Manage AI-generated and manually created stories.
+      </p>
+
+    </div>
+
+    <%= link_to "+ New Story",
         new_story_path,
         class: "primary-btn" %>
 
@@ -16,25 +24,44 @@
 
     <% @stories.each do |story| %>
 
-      <div class="story-item-card">
+      <div class="story-card">
 
-        <h3>
-          <%= story.title %>
-        </h3>
+        <div class="story-card-header">
 
-        <p>
-          <%= story.epic.title %>
-        </p>
+          <div class="story-avatar">
+            📖
+          </div>
 
-        <p>
-          Points:
-          <%= story.story_points %>
-        </p>
+          <div>
 
-        <p>
-          Status:
-          <%= story.status %>
-        </p>
+            <h3 class="story-name">
+              <%= story.title %>
+            </h3>
+
+            <p class="story-epic">
+              <%= story.epic.title %>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="story-meta">
+
+          <div class="story-stat">
+            <span>Story Points</span>
+            <strong><%= story.story_points %></strong>
+          </div>
+
+          <div class="story-stat">
+            <span>Status</span>
+
+            <span class="story-status">
+              <%= story.status.titleize %>
+            </span>
+          </div>
+
+        </div>
 
         <div class="story-actions">
 
@@ -45,6 +72,11 @@
           <%= link_to "Edit",
               edit_story_path(story),
               class: "btn-edit" %>
+
+          <%= button_to "Delete",
+              story_path(story),
+              method: :delete,
+              class: "btn-delete" %>
 
         </div>
 

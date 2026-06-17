@@ -71,3 +71,11 @@ gem "devise", "~> 5.0"
 gem "pundit"
 
 gem "jsbundling-rails", "~> 1.3"
+
+gem "ruby-openai"
+
+gem "httparty"
+
+gem "dotenv-rails"
+
+gem "pry"

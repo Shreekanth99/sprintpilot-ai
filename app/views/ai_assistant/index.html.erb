@@ -1,0 +1,71 @@
+<% content_for :page_title, "AI Assistant" %>
+
+<div class="ai-assistant-page">
+
+  <div class="ai-assistant-header">
+
+    <div>
+
+      <h1 class="ai-assistant-title">
+        🤖 SprintPilot AI Assistant
+      </h1>
+
+      <p class="ai-assistant-subtitle">
+        Generate Stories, Tasks, Epics and Sprint Plans using AI.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="ai-assistant-card">
+
+    <%= form_with url: generate_ai_assistant_index_path do |form| %>
+
+      <div class="form-group">
+
+        <%= form.label :generation_type,
+            "Generate",
+            class: "form-label" %>
+
+        <%= form.select :generation_type,
+            [
+              ["Story", "story"],
+              ["Tasks", "task"],
+              ["Epic", "epic"],
+              ["Sprint Plan", "sprint"]
+            ],
+            {},
+            class: "form-input" %>
+
+      </div>
+
+      <div class="form-group">
+
+        <%= form.label :prompt,
+            "Requirement",
+            class: "form-label" %>
+
+        <%= form.text_area :prompt,
+            rows: 8,
+            placeholder: "Describe your requirement...",
+            class: "ai-assistant-textarea" %>
+
+      </div>
+
+      <div class="ai-form-actions">
+
+        <%= form.submit "✨ Generate",
+            class: "ai-assistant-submit" %>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+  <div id="ai-assistant-result">
+
+  </div>
+
+</div>

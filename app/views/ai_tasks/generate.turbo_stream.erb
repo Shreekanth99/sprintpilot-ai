@@ -1,0 +1,26 @@
+<%= turbo_stream.update "ai-task-result" do %>
+
+  <div class="ai-result-card">
+
+    <h2 class="ai-result-title">
+      🤖 Generated Tasks
+    </h2>
+
+    <div class="ai-result-content">
+
+      <%= simple_format(@result) %>
+
+    </div>
+
+    <div class="ai-result-actions">
+
+      <%= button_to "💾 Save Tasks",
+          save_tasks_ai_tasks_path,
+          method: :post,
+          class: "save-story-btn" %>
+
+    </div>
+
+  </div>
+
+<% end %>

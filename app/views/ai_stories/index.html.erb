@@ -1,0 +1,87 @@
+<% content_for :page_title, "AI Story Generator" %>
+
+<div class="ai-stories-page">
+
+  <div class="ai-stories-header">
+
+    <div>
+
+      <h1 class="ai-stories-title">
+        🤖 AI Story Generator
+      </h1>
+
+      <p class="ai-stories-subtitle">
+        Generate agile user stories, acceptance criteria and story points using AI.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="ai-story-card">
+
+    <div class="ai-story-card-header">
+
+      <div class="ai-story-icon">
+        ✨
+      </div>
+
+      <div>
+
+        <h2>
+          Describe Your Feature
+        </h2>
+
+        <p>
+          Enter a feature requirement and SprintPilot AI will generate a complete Agile story.
+        </p>
+
+      </div>
+
+    </div>
+
+    <%= render "form" %>
+
+  </div>
+
+  <div id="ai-result">
+
+    <% if @result.present? %>
+
+      <div class="ai-result-card">
+
+        <div class="ai-result-header">
+
+          <h2 class="ai-result-title">
+            🤖 Generated Story
+          </h2>
+
+        </div>
+
+        <div class="ai-result-content">
+
+          <%= simple_format(@result) %>
+
+        </div>
+
+        <div class="ai-result-actions">
+
+          <%= button_to "💾 Save as Story",
+                save_story_ai_stories_path,
+                method: :post,
+                form_class: "inline-form",
+                class: "save-story-btn" %>
+
+          <%= link_to "❌ Cancel",
+                ai_stories_path,
+                class: "cancel-story-btn" %>
+
+        </div>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

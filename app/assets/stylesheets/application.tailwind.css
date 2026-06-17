@@ -2028,3 +2028,678 @@ EPIC SHOW PAGE
 ::-webkit-scrollbar-thumb:hover {
   background: #64748b;
 }
+
+/* ==========================================================
+   AI STORIES
+========================================================== */
+
+.ai-stories-page {
+  @apply space-y-6;
+}
+
+.ai-stories-title {
+  @apply text-4xl font-bold text-slate-900;
+}
+
+.ai-stories-subtitle {
+  @apply text-slate-500 mt-2;
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.ai-story-card {
+  @apply bg-white
+         rounded-3xl
+         p-6
+         shadow-lg
+         border
+         border-slate-200;
+}
+
+.ai-story-card-header {
+  @apply flex items-center gap-5 mb-5;
+}
+
+.ai-story-icon {
+  @apply h-14
+         w-14
+         rounded-2xl
+         flex
+         items-center
+         justify-center
+         text-xl
+         text-white;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+}
+
+.ai-story-card-header h2 {
+  @apply text-2xl font-bold text-slate-900;
+}
+
+.ai-story-card-header p {
+  @apply text-slate-500 mt-1;
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.ai-story-form {
+  @apply space-y-5;
+}
+
+.ai-story-textarea {
+  @apply w-full
+         rounded-2xl
+         border
+         border-slate-300
+         px-4
+         py-3
+         text-slate-700
+         outline-none
+         transition;
+
+  resize: none;
+}
+
+.ai-story-textarea:focus {
+  @apply border-blue-500 ring-4 ring-blue-100;
+}
+
+.ai-form-actions {
+  @apply flex justify-end;
+}
+
+.ai-story-submit {
+  @apply px-6
+         py-3
+         rounded-2xl
+         bg-blue-600
+         text-white
+         font-semibold
+         shadow-md
+         hover:bg-blue-700
+         transition;
+}
+
+/* ==========================================================
+   RESULT
+========================================================== */
+
+.ai-result-card {
+  @apply bg-white
+         rounded-3xl
+         p-6
+         shadow-lg
+         border
+         border-slate-200;
+}
+
+.ai-result-title {
+  @apply text-2xl
+         font-bold
+         text-slate-900
+         mb-4;
+}
+
+.ai-result-content {
+  @apply bg-slate-50
+         border
+         border-slate-200
+         rounded-2xl
+         p-5
+         text-slate-700
+         leading-8;
+}
+
+/* ==========================================================
+   AI STORIES PAGE
+========================================================== */
+
+.ai-stories-page {
+  @apply space-y-8;
+}
+
+.ai-stories-header {
+  @apply flex items-center justify-between;
+}
+
+.ai-stories-title {
+  @apply text-4xl font-bold text-slate-900;
+}
+
+.ai-stories-subtitle {
+  @apply text-slate-500 mt-2;
+}
+
+/* ==========================================================
+   STORY CARD
+========================================================== */
+
+.ai-story-card {
+  @apply bg-white rounded-3xl
+         p-8 shadow-lg
+         border border-slate-200;
+}
+
+.ai-story-card-header {
+  @apply flex items-center gap-6 mb-8;
+}
+
+.ai-story-icon {
+  @apply h-20 w-20
+         rounded-3xl
+         flex items-center justify-center
+         text-3xl text-white;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+}
+
+.ai-story-card-header h2 {
+  @apply text-3xl font-bold text-slate-900;
+}
+
+.ai-story-card-header p {
+  @apply text-slate-500 mt-2;
+}
+
+/* ==========================================================
+   FORM
+========================================================== */
+
+.ai-story-form {
+  @apply space-y-6;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply block text-sm font-semibold text-slate-700;
+}
+
+.form-input {
+  @apply w-full rounded-xl
+         border border-slate-300
+         px-4 py-3
+         bg-white
+         focus:outline-none
+         focus:ring-2
+         focus:ring-blue-500;
+}
+
+.ai-story-textarea {
+  @apply w-full rounded-2xl
+         border border-slate-300
+         px-5 py-4
+         text-slate-700
+         resize-none
+         focus:ring-2
+         focus:ring-blue-500
+         focus:border-blue-500
+         outline-none;
+  min-height: 220px;
+}
+
+.ai-form-actions {
+  @apply flex justify-end;
+}
+
+.ai-story-submit {
+  @apply px-8 py-3
+         rounded-2xl
+         bg-blue-600
+         text-white
+         font-semibold
+         shadow-lg
+         hover:bg-blue-700
+         transition;
+}
+
+/* ==========================================================
+   RESULT
+========================================================== */
+
+.ai-result-card {
+  @apply bg-white rounded-3xl
+         p-8 shadow-lg
+         border border-slate-200;
+}
+
+.ai-result-header {
+  @apply mb-6;
+}
+
+.ai-result-title {
+  @apply text-3xl font-bold text-slate-900;
+}
+
+.ai-result-content {
+  @apply bg-slate-50
+         border border-slate-200
+         rounded-2xl
+         p-6
+         text-slate-700
+         leading-8;
+}
+
+.ai-result-actions {
+  @apply flex items-center gap-4 mt-6;
+}
+
+.inline-form {
+  display: inline-block;
+}
+
+.save-story-btn {
+  @apply px-6 py-3
+         rounded-xl
+         bg-green-600
+         text-white
+         font-semibold
+         shadow-md
+         hover:bg-green-700
+         transition;
+}
+
+.cancel-story-btn {
+  @apply px-6 py-3
+         rounded-xl
+         bg-slate-200
+         text-slate-700
+         font-semibold
+         no-underline
+         hover:bg-slate-300
+         transition;
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 768px) {
+
+  .ai-story-card-header {
+    @apply flex-col items-start;
+  }
+
+  .ai-result-actions {
+    @apply flex-col items-start;
+  }
+
+}
+
+/* ==========================================================
+   STORIES PAGE
+========================================================== */
+
+.stories-page {
+  @apply space-y-8;
+}
+
+.stories-header {
+  @apply flex items-center justify-between;
+}
+
+.stories-title {
+  @apply text-5xl font-bold text-slate-900;
+}
+
+.stories-subtitle {
+  @apply text-slate-500 mt-2;
+}
+
+/* ==========================================================
+   STORIES GRID
+========================================================== */
+
+.stories-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* ==========================================================
+   STORY CARD
+========================================================== */
+
+.story-card {
+  @apply bg-white rounded-3xl
+         p-6 shadow-lg
+         border border-slate-200
+         transition-all duration-300;
+}
+
+.story-card:hover {
+  @apply shadow-xl -translate-y-1;
+}
+
+.story-card-header {
+  @apply flex items-center gap-4 mb-6;
+}
+
+.story-avatar {
+  @apply h-16 w-16
+         rounded-2xl
+         flex items-center justify-center
+         text-2xl text-white;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+}
+
+.story-name {
+  @apply text-xl font-bold text-slate-900;
+}
+
+.story-epic {
+  @apply text-slate-500 mt-1;
+}
+
+/* ==========================================================
+   META
+========================================================== */
+
+.story-meta {
+  @apply flex justify-between
+         bg-slate-50
+         rounded-2xl
+         p-4 mb-6;
+}
+
+.story-stat {
+  @apply flex flex-col;
+}
+
+.story-stat span:first-child {
+  @apply text-sm text-slate-500;
+}
+
+.story-stat strong {
+  @apply text-lg font-bold text-slate-900;
+}
+
+.story-status {
+  @apply px-3 py-1
+         rounded-full
+         bg-blue-100
+         text-blue-700
+         text-sm
+         font-semibold;
+}
+
+/* ==========================================================
+   ACTIONS
+========================================================== */
+
+.story-actions {
+  @apply flex gap-3;
+}
+
+.btn-view {
+  @apply flex-1 text-center
+         px-4 py-3
+         rounded-xl
+         bg-slate-100
+         text-slate-700
+         hover:bg-slate-200;
+}
+
+.btn-edit {
+  @apply flex-1 text-center
+         px-4 py-3
+         rounded-xl
+         bg-amber-100
+         text-amber-700
+         hover:bg-amber-200;
+}
+
+.btn-delete {
+  @apply flex-1
+         px-4 py-3
+         rounded-xl
+         bg-red-100
+         text-red-700
+         hover:bg-red-200;
+}
+
+.button_to {
+  @apply flex-1;
+}
+
+
+.ai-assistant-page {
+  @apply space-y-8;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.ai-assistant-header {
+  @apply flex items-center justify-between;
+}
+
+.ai-assistant-title {
+  @apply text-4xl font-bold text-slate-900;
+}
+
+.ai-assistant-subtitle {
+  @apply mt-2 text-slate-500;
+}
+
+/* ==========================================
+   FORM CARD
+========================================== */
+
+.ai-assistant-card {
+  @apply bg-white
+         rounded-3xl
+         p-8
+         shadow-lg
+         border border-slate-200;
+}
+
+.form-group {
+  @apply mb-6;
+}
+
+.form-label {
+  @apply block
+         mb-2
+         text-sm
+         font-semibold
+         text-slate-700;
+}
+
+.form-input {
+  @apply w-full
+         px-4 py-3
+         rounded-xl
+         border border-slate-300
+         focus:ring-2
+         focus:ring-blue-500
+         focus:border-blue-500;
+}
+
+.form-select {
+  @apply w-full
+         px-4 py-3
+         rounded-xl
+         border border-slate-300
+         bg-white
+         focus:ring-2
+         focus:ring-blue-500
+         focus:border-blue-500;
+}
+
+.ai-assistant-textarea {
+  @apply w-full
+         px-4 py-4
+         rounded-2xl
+         border border-slate-300
+         resize-none
+         focus:ring-2
+         focus:ring-blue-500
+         focus:border-blue-500;
+}
+
+.ai-form-actions {
+  @apply mt-6 flex justify-end;
+}
+
+.ai-assistant-submit {
+  @apply px-8 py-3
+         bg-blue-600
+         text-white
+         font-semibold
+         rounded-xl
+         shadow-md
+         transition
+         hover:bg-blue-700;
+}
+
+/* ==========================================
+   RESULT CARD
+========================================== */
+
+.ai-result-card {
+  @apply bg-white
+         rounded-3xl
+         p-8
+         shadow-lg
+         border border-slate-200;
+}
+
+.ai-result-header {
+  @apply flex items-center justify-between mb-6;
+}
+
+.ai-result-title {
+  @apply text-2xl
+         font-bold
+         text-slate-900;
+}
+
+.ai-result-content {
+  @apply text-slate-700
+         leading-8
+         whitespace-pre-wrap
+         break-words;
+}
+
+/* ==========================================
+   SAVE SECTION
+========================================== */
+
+.ai-result-actions {
+  @apply mt-8
+         pt-6
+         border-t
+         border-slate-200;
+}
+
+.save-form {
+  @apply space-y-4;
+}
+
+.action-buttons {
+  @apply flex
+         items-center
+         gap-3
+         mt-4;
+}
+
+/* ==========================================
+   SAVE BUTTON
+========================================== */
+
+.save-btn {
+  @apply px-6 py-3
+         bg-green-600
+         text-white
+         font-semibold
+         rounded-xl
+         shadow-md
+         transition
+         hover:bg-green-700;
+}
+
+/* ==========================================
+   CANCEL BUTTON
+========================================== */
+
+.cancel-btn {
+  @apply px-6 py-3
+         bg-red-500
+         text-white
+         font-semibold
+         rounded-xl
+         shadow-md
+         transition
+         hover:bg-red-600;
+}
+
+/* ==========================================
+   SUCCESS / ERROR STATES
+========================================== */
+
+.ai-success-message {
+  @apply p-4
+         rounded-xl
+         bg-green-100
+         text-green-700;
+}
+
+.ai-error-message {
+  @apply p-4
+         rounded-xl
+         bg-red-100
+         text-red-700;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .ai-assistant-card,
+  .ai-result-card {
+    @apply p-5;
+  }
+
+  .action-buttons {
+    @apply flex-col items-stretch;
+  }
+
+  .save-btn,
+  .cancel-btn {
+    @apply w-full text-center;
+  }
+
+  .ai-assistant-title {
+    @apply text-3xl;
+  }
+}
+
+.regenerate-btn {
+  @apply px-6 py-3
+         bg-amber-500
+         text-white
+         rounded-xl
+         font-semibold
+         shadow-md
+         hover:bg-amber-600;
+}

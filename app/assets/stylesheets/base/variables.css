@@ -2,9 +2,9 @@
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 24px;
-  --radius-xl: 30px;
+  --radius-xl: 32px;
 
-  --transition: all 0.3s ease;
+  --transition: all .3s ease;
 
   --shadow-sm:
     0 4px 12px rgba(15,23,42,.05);
@@ -14,4 +14,10 @@
 
   --shadow-lg:
     0 20px 50px rgba(15,23,42,.15);
+
+  --brand-primary: #2563eb;
+  --brand-secondary: #7c3aed;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --warning: #d97706;
 }

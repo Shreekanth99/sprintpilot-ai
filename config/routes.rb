@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "ai_stories/create"
   devise_for :users
 
   authenticated :user do
@@ -21,5 +22,15 @@ Rails.application.routes.draw do
 
   resource :settings, only: [] do
     patch :theme
+  end
+
+  resources :ai_assistant do
+    collection do
+      post :generate
+      post :save_story
+      post :save_tasks
+      post :save_epic
+      post :save_sprint
+    end
   end
 end

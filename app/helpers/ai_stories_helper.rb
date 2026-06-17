@@ -1,0 +1,2 @@
+module AiStoriesHelper
+end
